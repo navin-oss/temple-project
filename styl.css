@@ -1,0 +1,2015 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+/* ========== BASE STYLES & VARIABLES ========== */
+:root {
+    --gold: #ffd700;
+    --amber: #ffcc80;
+    --bronze: #8b4513;
+    --copper: #b87333;
+    --parchment: #f0e6d2;
+    --velvet: #331a00;
+    --obsidian: #1a0f07;
+
+    /* Define standard max-width for content centering */
+    --container-max-width: 1200px;
+    --container-padding: 1rem; /* Default padding for mobile */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Smooth transitions for layout changes */
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--parchment);
+    background: linear-gradient(135deg, var(--obsidian), var(--velvet));
+    line-height: 1.8;
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+}
+
+/* Helper class for centering content containers */
+.container {
+    width: 90%; /* Use percentage for responsiveness on smaller screens */
+    max-width: var(--container-max-width); /* Limit width on large screens */
+    margin-left: auto;
+    margin-right: auto; /* Center the container */
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+
+/* ========== NAVBAR ========== */
+.navbar {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, var(--bronze), var(--copper));
+    padding: 1rem var(--container-padding); /* Use variable padding */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border-bottom: 3px solid var(--gold);
+}
+
+/* Apply container centering to navbar content */
+.navbar > .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Take full width of the padded navbar area */
+    padding: 0; /* Reset padding as navbar itself has it */
+}
+
+
+.logo {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-family: 'Cardo', serif;
+    color: var(--gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin-right: 1rem; /* Add some space between logo and links */
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 1.5rem;
+    /* Removed margin-top from original */
+}
+
+.nav-links a {
+    color: var(--parchment);
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    position: relative;
+    display: block; /* Ensure padding creates clickable area */
+    text-align: center; /* Center text for potential column layout */
+}
+
+/* Add hover effect (optional but nice) */
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--gold);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+
+/* ========== HERO SECTION ========== */
+.hero {
+    min-height: 500px; /* Minimum height */
+    height: 80vh; /* Relative to viewport height */
+    background: linear-gradient(rgba(34, 17, 0, 0.7), rgba(34, 17, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1586348943529-beaae6c28db9') center/cover fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center text content */
+    padding: var(--container-padding);
+}
+
+.hero-content {
+    max-width: 800px; /* Limit width of text content for readability */
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-family: 'Cardo', serif; /* Use Cardo for headings if desired */
+    color: var(--gold); /* Make heading stand out */
+    text-shadow: 2px 2px 4px var(--obsidian); /* Add shadow */
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    margin-bottom: 1.5rem;
+    max-width: 600px; /* Slightly narrower width for paragraph */
+    margin-left: auto;
+    margin-right: auto; /* Center paragraph within its container */
+}
+
+/* ========== GENERIC SECTION STYLING ========== */
+.section {
+    padding: 3rem 0; /* Vertical padding, horizontal handled by .container */
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-family: 'Cardo', serif;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px var(--obsidian);
+}
+
+/* ========== FEATURED TEMPLATES (Using .section) ========== */
+.featured-section {
+   /* Inherits .section padding */
+}
+
+.featured-templates {
+    display: grid;
+    /* Responsive grid: creates columns ~300px wide, fitting as many as possible */
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 1.5rem;
+    /* Centering handled by the parent's .container class */
+}
+
+.temple-card {
+    /* Assuming card has its own internal padding/styling */
+    background-color: var(--velvet); /* Example background */
+    border: 1px solid var(--copper);
+    border-radius: 8px;
+    overflow: hidden; /* Keep image corners rounded */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex; /* Use flex for better control */
+    flex-direction: column;
+}
+
+.temple-card img {
+    width: 100%; /* Make image fill card width */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Cover area without distortion */
+    display: block; /* Remove potential bottom space */
+}
+
+.temple-info { /* Add a container for text inside the card */
+    padding: 1.5rem;
+    flex-grow: 1; /* Allow text area to grow */
+}
+
+.temple-info h3 {
+    color: var(--amber);
+    margin-bottom: 0.5rem;
+}
+
+/* ========== STATISTICS (Using .section) ========== */
+.statistics {
+   /* Inherits .section padding */
+   background-color: rgba(0,0,0, 0.1); /* Subtle background difference */
+}
+
+.stats-container {
+    display: grid;
+    /* Responsive grid: creates columns ~250px wide */
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: 1.5rem;
+    /* Centering handled by the parent's .container class */
+}
+
+.stat {
+    background-color: var(--velvet);
+    border: 1px solid var(--copper);
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.stat h3 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive font size */
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.stat p {
+    font-size: 1rem;
+    color: var(--amber);
+}
+
+
+/* ========== ABOUT SECTION (Using .section) ========== */
+.about-us {
+    /* Inherits .section padding */
+}
+
+/* Content inside .about-us is already centered via .container */
+.about-us p {
+    font-size: 1.1rem; /* Slightly larger default size */
+    max-width: 800px; /* Limit line length for readability */
+    margin-left: auto; /* Center the paragraph block */
+    margin-right: auto;
+    text-align: justify; /* Justify text for a cleaner look */
+    hyphens: auto; /* Improve justification */
+    padding-bottom: 1rem; /* Space between paragraphs */
+}
+
+.about-us h2 { /* Reuse section-title */
+   /* Styles defined in .section-title */
+}
+
+
+/* ========== FOOTER ========== */
+footer {
+    background: linear-gradient(to right, var(--copper), var(--bronze));
+    padding: 2rem 0; /* Vertical padding */
+    margin-top: 3rem; /* Space above footer */
+    border-top: 3px solid var(--gold);
+    text-align: center;
+    color: var(--parchment);
+}
+
+/* Footer content uses the .container for centering */
+.footer-content {
+    /* Styles for content inside the footer container */
+}
+
+
+.social-media a {
+    display: inline-block; /* Allows margin */
+    margin: 0 0.75rem; /* Increased spacing */
+}
+.social-media img {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle; /* Align icons nicely */
+    opacity: 0.8;
+}
+.social-media img:hover {
+    opacity: 1;
+    transform: scale(1.1); /* Slight grow effect */
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.footer-links a {
+    color: var(--parchment);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.footer-links a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--amber);
+}
+
+
+/* ========== RESPONSIVE DESIGN ADJUSTMENTS ========== */
+
+/* Medium screens (Tablets) */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 1.5rem; /* Slightly more padding */
+    }
+
+    .navbar > .container {
+        flex-direction: column; /* Stack logo and links */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .nav-links {
+        margin-top: 1rem; /* Add space below logo */
+        width: 100%; /* Take full width */
+        flex-direction: column; /* Stack nav links */
+        gap: 0.5rem; /* Reduce gap for vertical layout */
+    }
+    .nav-links a {
+        padding: 0.75rem 1rem; /* Larger tap target */
+        background-color: rgba(0, 0, 0, 0.2); /* Slight background */
+        border-radius: 4px;
+    }
+
+    .hero {
+        height: auto; /* Allow height to adjust to content */
+        min-height: 60vh; /* Keep a decent min height */
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
+
+    .section-title {
+       font-size: clamp(2rem, 7vw, 2.8rem); /* Adjust title size */
+    }
+
+    /* Adjust grid minimum slightly if needed */
+     .featured-templates {
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+     }
+     .stats-container {
+         grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+     }
+
+     .about-us p {
+        text-align: left; /* Switch back from justify if it looks bad */
+        hyphens: none;
+     }
+}
+
+/* Small screens (Mobiles) */
+@media (max-width: 480px) {
+    :root {
+        --container-padding: 1rem; /* Standard mobile padding */
+    }
+
+     body {
+        line-height: 1.7; /* Slightly tighter line height */
+     }
+
+    .hero {
+        min-height: 50vh;
+        /* Adjust background position if fixed causes issues on mobile */
+        /* background-attachment: scroll; */
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .hero p {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+
+    .temple-card img {
+        height: 150px; /* Shorter image height on small screens */
+    }
+    .temple-info {
+        padding: 1rem; /* Reduce card padding */
+    }
+
+    .stat {
+        padding: 1rem; /* Reduce stat padding */
+    }
+    .stat h3 {
+         font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+
+     .footer-links li {
+        display: block; /* Stack footer links */
+        margin: 0.5rem 0;
+    }
+
+    .social-media img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Larger screens (Desktops) - Adjustments for wider viewports */
+@media (min-width: 1200px) {
+    /* Increase base font size slightly for better readability on large screens */
+    /* html { font-size: 17px; } */ /* Uncomment if desired */
+
+    .section {
+        padding: 5rem 0; /* More vertical spacing */
+    }
+
+    /* Navbar container padding can be increased if desired */
+    /* .navbar { padding: 1rem 2rem; } */
+}
+.nav-links a {
+    /* Your existing styles */
+    position: relative;
+    overflow: hidden; /* Clip the pseudo-element */
+  }
+  
+  .nav-links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -100%; /* Start below the element */
+    width: 100%;
+    height: 4px; /* Height of the underline */
+    background-color: var(--gold);
+    transition: bottom 0.3s ease-in-out;
+  }
+  
+  .nav-links a:hover::before,
+  .nav-links a:focus::before {
+    bottom: 0; /* Slide in on hover/focus */
+  }
+  
+  .nav-links a:hover,
+  .nav-links a:focus {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly different hover background */
+  }
+
+.nav-links a {
+  /* Your existing styles */
+  position: relative;
+  overflow: hidden; /* Clip the pseudo-element */
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -100%; /* Start below the element */
+  width: 100%;
+  height: 4px; /* Height of the underline */
+  background-color: var(--gold);
+  transition: bottom 0.3s ease-in-out;
+}
+
+.nav-links a:hover::before,
+.nav-links a:focus::before {
+  bottom: 0; /* Slide in on hover/focus */
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly different hover background */
+}
+
+
+
+/* Sacred Banyan Tree Pattern */
+.sacred-border {
+    position: relative;
+    padding: 2rem;
+}
+
+.sacred-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 5 L60 25 L40 25 L50 5 M50 95 L60 75 L40 75 L50 95" stroke="%238b4513" stroke-width="2" fill="none"/></svg>');
+    background-size: 40px;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Flowing Ganges Animation */
+.river-flow {
+    position: relative;
+    overflow: hidden;
+}
+
+.river-flow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 15px;
+    background: linear-gradient(90deg, 
+        transparent 25%,
+        rgba(102, 205, 170, 0.5) 50%,
+        transparent 75%
+    );
+    animation: river 6s linear infinite;
+}
+
+@keyframes river {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(50%); }
+}
+
+/* Lotus Flower Patterns */
+./* ========== DIVINE LIGHT EFFECTS ========== */
+@keyframes divineGlow {
+    0% { opacity: 0.3; transform: scale(0.9); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+    100% { opacity: 0.3; transform: scale(0.9); }
+}
+
+
+.divine-light {
+    position: fixed;
+    width: 150vw;
+    height: 150vh;
+    background: radial-gradient(circle, 
+        rgba(255,215,0,0.1) 0%, 
+        rgba(255,215,0,0.05) 20%, 
+        transparent 60%);
+    animation: divineGlow 8s infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ========== CELESTIAL PATTERNS ========== */
+:root {
+    --mandala-pattern: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="%23ffd700" stroke-width="0.5" fill="none"><animate attributeName="r" values="45;40;45" dur="10s" repeatCount="indefinite"/></circle></svg>');
+}
+
+.mandala-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: var(--mandala-pattern);
+    background-size: 80px;
+    opacity: 0.1;
+    animation: mandalaSpin 120s linear infinite;
+}
+
+@keyframes mandalaSpin {
+    100% { transform: rotate(360deg); }
+}
+
+/* ========== SACRED GEOMETRY ========== */
+.geometric-portal {
+    position: relative;
+    overflow: hidden;
+}
+
+.geometric-portal::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        var(--gold) 0deg,
+        var(--amber) 120deg,
+        transparent 180deg,
+        var(--bronze) 240deg,
+        transparent 300deg
+    );
+    animation: portalSpin 20s linear infinite;
+    filter: blur(20px);
+    opacity: 0.1;
+}
+
+@keyframes portalSpin {
+    100% { transform: rotate(360deg); }
+}
+
+/* ========== DIVINE TYPOGRAPHY ========== */
+.divine-text {
+    font-family: 'Cardo', serif;
+    text-shadow: 
+        0 0 10px var(--gold),
+        0 0 20px rgba(255,215,0,0.3),
+        2px 2px 4px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.divine-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    z-index: -1;
+    text-shadow: 
+        0 0 20px var(--gold),
+        0 0 40px var(--amber),
+        0 0 60px var(--bronze);
+    animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+/* ========== HOLY WATER EFFECTS ========== */
+.holy-water {
+    position: relative;
+    overflow: hidden;
+}
+
+.holy-water::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -50%;
+    width: 200%;
+    height: 100px;
+    background: linear-gradient(
+        90deg,
+        transparent 25%,
+        rgba(102, 205, 170, 0.3) 50%,
+        transparent 75%
+    );
+    animation: holyFlow 10s linear infinite;
+    filter: blur(10px);
+}
+
+@keyframes holyFlow {
+    0% { transform: translateX(-50%) rotate(-3deg); }
+    100% { transform: translateX(50%) rotate(3deg); }
+}
+
+/* ========== DIVINE CREATURES MOTIFS ========== */
+.peacock-feather {
+    background-image: 
+        radial-gradient(circle at 90% 10%,
+            rgba(0, 128, 0, 0.1) 10%,
+            transparent 30%),
+        linear-gradient(
+            45deg,
+            transparent 40%,
+            rgba(0, 128, 0, 0.1) 50%,
+            transparent 60%
+        );
+    background-size: 100px 100px;
+}
+
+.lion-motif::before {
+    content: '🦁';
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.1;
+    transform: rotate(30deg);
+    animation: roar 3s ease-in-out infinite;
+}
+
+@keyframes roar {
+    50% { transform: scale(1.2) rotate(25deg); }
+}
+
+/* ========== ASTRAL PROJECTION EFFECTS ========== */
+.astral-layer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 2px),
+        radial-gradient(circle, rgba(255,215,0,0.05) 1px, transparent 2px);
+    background-size: 40px 40px;
+    animation: starTwinkle 5s infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.3; }
+}
+
+/* ========== ENHANCED TEMPLE CARDS ========== */
+.temple-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.temple-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.temple-card:hover .temple-card-inner {
+    transform: rotateY(180deg);
+}
+
+.temple-card-front,
+.temple-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.temple-card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(45deg, var(--obsidian), var(--velvet));
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ========== DIVINE FORM ELEMENTS ========== */
+.divine-input {
+    background: rgba(0,0,0,0.3);
+    border: 2px solid var(--gold);
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    color: var(--parchment);
+    transition: all 0.3s ease;
+}
+
+.divine-input:focus {
+    box-shadow: 0 0 20px var(--gold);
+    background: rgba(255,215,0,0.05);
+}
+
+/* ========== SACRED SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 12px;
+    background: var(--obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--gold), var(--bronze));
+    border-radius: 10px;
+    border: 3px solid var(--obsidian);
+}
+
+/* ========== ENHANCED NAVIGATION ========== */
+.nav-links a::after {
+    content: '🕉️';
+    position: absolute;
+    right: -20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    opacity: 0.5;
+    right: 0;
+}
+
+/* ========== DIVINE TRANSITIONS ========== */
+.divine-transition {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, var(--gold), var(--bronze));
+    clip-path: circle(0% at 50% 50%);
+    animation: divineReveal 1s ease-in-out;
+    z-index: 999;
+}
+
+@keyframes divineReveal {
+    0% { clip-path: circle(0% at 50% 50%); }
+    50% { clip-path: circle(100% at 50% 50%); }
+    100% { clip-path: circle(0% at 50% 50%); }
+}
+
+/* ========== RESPONSIVE DIVINITY ========== */
+@media (max-width: 768px) {
+    .divine-text::after {
+        text-shadow: 
+            0 0 10px var(--gold),
+            0 0 20px rgba(255,215,0,0.2);
+    }
+    
+    .temple-card {
+        perspective: none;
+    }
+    
+    .geometric-portal::before {
+        animation-duration: 40s;
+    }
+}
+
+/* ========== HOLY PROTECTION BORDERS ========== */
+.protected-section {
+    position: relative;
+    padding: 2rem;
+}
+
+.protected-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px double var(--gold);
+    border-radius: 20px;
+    filter: drop-shadow(0 0 10px var(--gold));
+    pointer-events: none;
+}
+
+/* ========== SACRED COLOR SCHEME ========== */
+:root {
+    --saffron: #FF9933;
+    --turmeric: #FFD700;
+    --vermilion: #E34234;
+    --sacred-green: #138808;
+}
+
+.divine-accent {
+    background: linear-gradient(
+        45deg,
+        var(--saffron),
+        var(--turmeric),
+        var(--vermilion),
+        var(--sacred-green)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+/* ========== SACRED NATURE ELEMENTS ========== */
+/* Sacred Banyan Tree Pattern */
+.sacred-border {
+    position: relative;
+    padding: 2rem;
+}
+
+.sacred-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 5 L60 25 L40 25 L50 5 M50 95 L60 75 L40 75 L50 95" stroke="%238b4513" stroke-width="2" fill="none"/></svg>');
+    background-size: 40px;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Flowing Ganges Animation */
+.river-flow {
+    position: relative;
+    overflow: hidden;
+}
+
+.river-flow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 15px;
+    background: linear-gradient(90deg, 
+        transparent 25%,
+        rgba(102, 205, 170, 0.5) 50%,
+        transparent 75%
+    );
+    animation: river 6s linear infinite;
+}
+
+@keyframes river {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(50%); }
+}
+
+/* Lotus Flower Patterns */
+.lotus-pattern {
+    background-image: 
+        radial-gradient(circle at 10% 10%,
+            rgba(255,215,0,0.1) 2%,
+            transparent 20%),
+        radial-gradient(circle at 90% 90%,
+            rgba(255,215,0,0.1) 2%,
+            transparent 20%);
+    background-size: 80px 80px;
+}
+
+/* Sacred Tulsi Plant Motif */
+.tulsi-border {
+    border-left: 5px solid transparent;
+    border-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 10 50" xmlns="http://www.w3.org/2000/svg"><path d="M5 0 Q3 15 5 30 Q7 45 5 50" fill="%234CAF50"/></svg>') 30 round;
+}
+
+/* Flower Particle Effects */
+.flower-particle {
+    position: absolute;
+    background: radial-gradient(circle, 
+        #FFD700 20%, 
+        rgba(255,215,0,0.3) 50%, 
+        transparent 70%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: float 6s infinite ease-in-out;
+}
+
+/* ========== ENHANCED ELEMENTS ========== */
+/* Updated Navbar with Sacred Tree Motif */
+.navbar {
+    border-bottom: 3px solid var(--gold);
+    background-image: 
+        linear-gradient(to right, 
+            transparent 49%, 
+            rgba(139, 69, 19, 0.3) 50%, 
+            transparent 51%),
+        radial-gradient(circle at center,
+            rgba(255,215,0,0.1) 20%,
+            transparent 30%);
+}
+
+/* Hero Section with Lotus Background */
+.hero {
+    background-blend-mode: multiply;
+    background-image: 
+        radial-gradient(circle at 80% 20%,
+            rgba(255,215,0,0.1) 10%,
+            transparent 30%),
+        linear-gradient(15deg,
+            var(--velvet) 30%,
+            var(--bronze) 100%);
+}
+
+/* Temple Cards with Leaf Motifs */
+.temple-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.temple-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8 2 4 6 4 12c0 8 8 10 8 10s8-2 8-10c0-6-4-10-8-10z" fill="%238b4513" fill-opacity="0.1"/></svg>');
+    background-size: 80px;
+    animation: leafFlow 20s linear infinite;
+}
+
+@keyframes leafFlow {
+    0% { transform: rotate(0deg) translate(0,0); }
+    100% { transform: rotate(360deg) translate(100px,100px); }
+}
+
+/* Statistics Section with Rangoli Pattern */
+.stat {
+    background-image: 
+        radial-gradient(circle at center,
+            rgba(255,215,0,0.1) 20%,
+            transparent 80%),
+        linear-gradient(45deg,
+            var(--velvet) 30%,
+            var(--bronze) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="%238b4513" stroke-width="2" fill="none"/></svg>');
+    background-size: 20px;
+    opacity: 0.1;
+}
+
+/* Footer with Sacred Fire Animation */
+footer {
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, 
+        rgba(255,69,0,0.3) 20%, 
+        transparent 60%);
+    filter: blur(20px);
+    animation: fire 2s ease-in-out infinite alternate;
+}
+
+@keyframes fire {
+    0% { transform: translateX(-50%) scale(0.8); opacity: 0.6; }
+    100% { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+}
+
+/* Enhanced Contact Section with Rice Grain Pattern */
+.contact-us {
+    background-image: 
+        linear-gradient(45deg,
+            transparent 65%,
+            rgba(255,255,255,0.05) 65%,
+            transparent 70%),
+        linear-gradient(-45deg,
+            transparent 65%,
+            rgba(255,255,255,0.05) 65%,
+            transparent 70%);
+    background-size: 40px 40px;
+}
+
+/* ========== ANIMATION ENHANCEMENTS ========== */
+@keyframes leafFall {
+    0% { transform: translateY(-100%) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.leaf-fall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.leaf-fall::before {
+    content: '❀';
+    position: absolute;
+    color: rgba(139, 69, 19, 0.3);
+    animation: leafFall 10s linear infinite;
+}
+
+/* ========== RESPONSIVE ENHANCEMENTS ========== */
+@media (max-width: 768px) {
+    .sacred-border::before,
+    .temple-card::before {
+        background-size: 20px;
+    }
+    
+    .river-flow::after {
+        height: 8px;
+    }
+    
+    footer::before {
+        width: 100px;
+        height: 100px;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+/* ========== SACRED NATURE ELEMENTS ========== */
+/* Sacred Banyan Tree Pattern */
+.sacred-border {
+    position: relative;
+    padding: 3rem;
+    overflow: hidden;
+}
+
+.sacred-border::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: calc(100% + 100px);
+    height: calc(100% + 100px);
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 5 L60 25 L40 25 L50 5 M50 95 L60 75 L40 75 L50 95" stroke="%238b4513" stroke-width="2" fill="none"/></svg>');
+    background-size: 60px;
+    opacity: 0.4;
+    z-index: -1;
+    animation: sacredTreeFlow 30s linear infinite;
+}
+
+@keyframes sacredTreeFlow {
+    0% { transform: rotate(0deg) translate(0, 0); }
+    100% { transform: rotate(360deg) translate(50px, 50px); }
+}
+
+/* Flowing Ganges Animation */
+.river-flow {
+    position: relative;
+    overflow: hidden;
+}
+
+.river-flow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100px;
+    width: calc(200% + 200px);
+    height: 20px;
+    background: linear-gradient(90deg, 
+        transparent 20%,
+        rgba(102, 205, 170, 0.6) 40%,
+        rgba(102, 205, 170, 0.4) 60%,
+        transparent 80%
+    );
+    animation: river 8s linear infinite;
+    filter: blur(5px);
+}
+
+@keyframes river {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(50%); }
+}
+
+/* Lotus Flower Patterns */
+.lotus-pattern {
+    background-image: 
+        radial-gradient(circle at 10% 10%,
+            rgba(255,215,0,0.15) 2%,
+            transparent 25%),
+        radial-gradient(circle at 90% 90%,
+            rgba(255,215,0,0.15) 2%,
+            transparent 25%);
+    background-size: 100px 100px;
+    animation: lotusBloom 20s linear infinite;
+}
+
+@keyframes lotusBloom {
+    0% { background-size: 100px 100px; }
+    50% { background-size: 110px 110px; }
+    100% { background-size: 100px 100px; }
+}
+
+/* Sacred Tulsi Plant Motif */
+.tulsi-border {
+    border-left: 7px solid transparent;
+    border-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 10 50" xmlns="http://www.w3.org/2000/svg"><path d="M5 0 Q3 15 5 30 Q7 45 5 50" fill="%234CAF50"/></svg>') 30 round;
+    padding-left: 1rem;
+}
+
+/* Flower Particle Effects */
+.flower-particle {
+    position: absolute;
+    background: radial-gradient(circle, 
+        #FFD700 25%, 
+        rgba(255,215,0,0.4) 50%, 
+        transparent 75%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: float 8s infinite ease-in-out, petalTwirl 10s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes petalTwirl {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========== ENHANCED ELEMENTS ========== */
+/* Updated Navbar with Sacred Tree Motif */
+.navbar {
+    border-bottom: 4px solid #ffd700;
+    background-image: 
+        linear-gradient(to right, 
+            transparent 48%, 
+            rgba(139, 69, 19, 0.4) 50%, 
+            transparent 52%),
+        radial-gradient(circle at center,
+            rgba(255,215,0,0.15) 20%,
+            transparent 35%);
+    padding: 2rem 0;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero Section with Lotus Background */
+.hero {
+    background-blend-mode: multiply;
+    background-image: 
+        radial-gradient(circle at 80% 20%,
+            rgba(255,215,0,0.15) 10%,
+            transparent 35%),
+        linear-gradient(15deg,
+            #221100 30%,
+            #8b4513 100%),
+        url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 85 C 70 85, 90 65, 90 45 C 90 25, 70 5, 50 5 C 30 5, 10 25, 10 45 C 10 65, 30 85, 50 85 Z M 50 75 C 65 75, 80 60, 80 45 C 80 30, 65 15, 50 15 C 35 15, 20 30, 20 45 C 20 60, 35 75, 50 75 Z M 50 65 C 60 65, 70 55, 70 45 C 70 35, 60 25, 50 25 C 40 25, 30 35, 30 45 C 30 55, 40 65, 50 65 Z" fill="rgba(255,204,128,0.08)"/></svg>');
+    background-size: 300px;
+    animation: lotusBloomBg 30s linear infinite;
+}
+
+@keyframes lotusBloomBg {
+    0% { background-position: 0 0; }
+    100% { background-position: 300px 300px; }
+}
+
+/* Temple Cards with Leaf Motifs */
+.temple-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.temple-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8 2 4 6 4 12c0 8 8 10 8 10s8-2 8-10c0-6-4-10-8-10z" fill="%238b4513" fill-opacity="0.15"/></svg>');
+    background-size: 100px;
+    animation: leafFlow 25s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes leafFlow {
+    0% { transform: rotate(0deg) translate(0,0); }
+    100% { transform: rotate(360deg) translate(120px,120px); }
+}
+
+/* Statistics Section with Rangoli Pattern */
+.stat {
+    background-image: 
+        radial-gradient(circle at center,
+            rgba(255,215,0,0.15) 20%,
+            transparent 80%),
+        linear-gradient(45deg,
+            #221100 30%,
+            #8b4513 100%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.stat::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="%238b4513" stroke-width="2" fill="none"/></svg>');
+    background-size: 30px;
+    opacity: 0.15;
+    animation: rangoliRotate 30s linear infinite;
+}
+
+@keyframes rangoliRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Footer with Sacred Fire Animation */
+footer {
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, 
+        rgba(255,69,0,0.4) 20%, 
+        transparent 60%);
+    filter: blur(25px);
+    animation: fire 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes fire {
+    0% { transform: translateX(-50%) scale(0.8); opacity: 0.7; }
+    100% { transform: translateX(-50%) scale(1.2); opacity: 0.9; }
+}
+
+/* Enhanced Contact Section with Rice Grain Pattern */
+.contact-us {
+    background-image: 
+        linear-gradient(45deg,
+            transparent 62%,
+            rgba(255,255,255,0.08) 65%,
+            transparent 70%),
+        linear-gradient(-45deg,
+            transparent 62%,
+            rgba(255,255,255,0.08) 65%,
+            transparent 70%);
+    background-size: 50px 50px;
+}
+
+/* ========== ANIMATION ENHANCEMENTS ========== */
+@keyframes leafFall {
+    0% { transform: translateY(-100%) rotate(0deg) scale(0.8); opacity: 0.8; }
+    100% { transform: translateY(100vh) rotate(360deg) scale(1.2); opacity: 1; }
+}
+
+.leaf-fall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.leaf-fall::before {
+    content: '❀';
+    position: absolute;
+    color: rgba(139, 69, 19, 0.4);
+    animation: leafFall 12s linear infinite;
+    font-size: 1.5rem;
+}
+
+/* ========== RESPONSIVE ENHANCEMENTS ========== */
+@media (max-width: 768px) {
+    .sacred-border::before,
+    .temple-card::before {
+        background-size: 30px;
+    }
+    
+    .river-flow::after {
+        height: 12px;
+    }
+    
+    footer::before {
+        width: 150px;
+        height: 150px;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+/* ========== SACRED NATURE ELEMENTS ========== */
+/* Sacred Banyan Tree Pattern with Depth */
+.sacred-border {
+    position: relative;
+    padding: 4rem;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.sacred-border::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: calc(100% + 160px);
+    height: calc(100% + 160px);
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 5 L60 25 L40 25 L50 5 M50 95 L60 75 L40 75 L50 95" stroke="%238b4513" stroke-width="2" fill="none"/></svg>');
+    background-size: 80px;
+    opacity: 0.5;
+    z-index: -1;
+    animation: sacredTreeFlow 40s linear infinite;
+    transform: translateZ(-20px); /* Depth */
+}
+
+@keyframes sacredTreeFlow {
+    0% { transform: rotate(0deg) translate(0, 0) translateZ(-20px); }
+    100% { transform: rotate(360deg) translate(80px, 80px) translateZ(-20px); }
+}
+
+/* Flowing Ganges Animation with Water Ripple */
+.river-flow {
+    position: relative;
+    overflow: hidden;
+}
+
+.river-flow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -150px;
+    width: calc(200% + 300px);
+    height: 30px;
+    background: linear-gradient(90deg, 
+        transparent 15%,
+        rgba(102, 205, 170, 0.7) 35%,
+        rgba(102, 205, 170, 0.5) 65%,
+        transparent 85%
+    );
+    animation: river 10s linear infinite, ripple 3s linear infinite alternate;
+    filter: blur(8px);
+}
+
+@keyframes river {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(50%); }
+}
+
+@keyframes ripple {
+    0% { transform: scaleY(1); }
+    100% { transform: scaleY(1.1); }
+}
+
+/* Lotus Flower Patterns with Glow */
+.lotus-pattern {
+    background-image: 
+        radial-gradient(circle at 10% 10%,
+            rgba(255,215,0,0.2) 2%,
+            transparent 30%),
+        radial-gradient(circle at 90% 90%,
+            rgba(255,215,0,0.2) 2%,
+            transparent 30%);
+    background-size: 120px 120px;
+    animation: lotusBloom 25s linear infinite, lotusGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes lotusBloom {
+    0% { background-size: 120px 120px; }
+    50% { background-size: 130px 130px; }
+    100% { background-size: 120px 120px; }
+}
+
+@keyframes lotusGlow {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.2); }
+}
+
+/* Sacred Tulsi Plant Motif with Shadow */
+.tulsi-border {
+    border-left: 8px solid transparent;
+    border-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 10 50" xmlns="http://www.w3.org/2000/svg"><path d="M5 0 Q3 15 5 30 Q7 45 5 50" fill="%234CAF50"/></svg>') 30 round;
+    padding-left: 1.2rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Flower Particle Effects with 3D and Color Shift */
+.flower-particle {
+    position: absolute;
+    background: radial-gradient(circle, 
+        #FFD700 30%, 
+        rgba(255,215,0,0.5) 55%, 
+        transparent 80%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: float 10s infinite ease-in-out, petalTwirl 12s linear infinite, colorShift 8s linear infinite alternate;
+    transform-origin: center;
+    transform-style: preserve-3d;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1) translateZ(0); }
+    50% { transform: translateY(-25px) scale(1.1) translateZ(10px); }
+    100% { transform: translateY(0) scale(1) translateZ(0); }
+}
+
+@keyframes petalTwirl {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes colorShift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(30deg); }
+}
+
+/* ========== ENHANCED ELEMENTS ========== */
+/* Updated Navbar with Sacred Tree Motif and Depth */
+.navbar {
+    border-bottom: 5px solid #ffd700;
+    background-image: 
+        linear-gradient(to right, 
+            transparent 47%, 
+            rgba(139, 69, 19, 0.5) 50%, 
+            transparent 53%),
+        radial-gradient(circle at center,
+            rgba(255,215,0,0.2) 20%,
+            transparent 40%);
+    padding: 2.5rem 0;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+    transform-style: preserve-3d;
+}
+
+/* Hero Section with Lotus Background and Depth */
+.hero {
+    background-blend-mode: multiply;
+    background-image: 
+        radial-gradient(circle at 80% 20%,
+            rgba(255,215,0,0.2) 10%,
+            transparent 40%),
+        linear-gradient(15deg,
+            #221100 30%,
+            #8b4513 100%),
+        url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 85 C 70 85, 90 65, 90 45 C 90 25, 70 5, 50 5 C 30 5, 10 25, 10 45 C 10 65, 30 85, 50 85 Z M 50 75 C 65 75, 80 60, 80 45 C 80 30, 65 15, 50 15 C 35 15, 20 30, 20 45 C 20 60, 35 75, 50 75 Z M 50 65 C 60 65, 70 55, 70 45 C 70 35, 60 25, 50 25 C 40 25, 30 35, 30 45 C 30 55, 40 65, 50 65 Z" fill="rgba(255,204,128,0.1)"/></svg>');
+    background-size: 350px;
+    animation: lotusBloomBg 35s linear infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes lotusBloomBg {
+    0% { background-position: 0 0; }
+    100% { background-position: 350px 350px; }
+}
+
+/* Temple Cards with Leaf Motifs and 3D */
+.temple-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.7);
+    transform-style: preserve-3d;
+}
+
+.temple-card::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -60%;
+    width: 220%;
+    height: 220%;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8 2 4 6 4 12c0 8 8 10 8 10s8-2 8-10c0-6-4-10-8-10z" fill="%238b4513" fill-opacity="0.2"/></svg>');
+    background-size: 120px;
+    animation: leafFlow 30s linear infinite;
+    opacity: 0.7;
+    transform: translateZ(10px);
+}
+
+@keyframes leafFlow {
+    0% { transform: rotate(0deg) translate(0,0); }
+    100% { transform: rotate(360deg) translate(140px,140px); }
+}
+
+/* Statistics Section with Rangoli Pattern and Depth */
+.stat {
+    background-image: 
+        radial-gradient(circle at center,
+            rgba(255,215,0,0.2) 20%,
+            transparent 80%),
+        linear-gradient(45deg,
+            #221100 30%,
+            #8b4513 100%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.7);
+    transform-style: preserve-3d;
+}
+
+.stat::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: calc(100% + 60px);
+    height: calc(100% + 60px);
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="%238b4513" stroke-width="2" fill="none"/></svg>');
+    background-size: 40px;
+    opacity: 0.2;
+    animation: rangoliRotate 35s linear infinite;
+    transform: translateZ(10px);
+}
+
+@keyframes rangoliRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Footer with Sacred Fire Animation and Depth */
+footer {
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, 
+        rgba(255,69,0,0.5) 20%, 
+        transparent 60%);
+    filter: blur(30px);
+    animation: fire 3s ease-in-out infinite alternate;
+    transform: translateZ(10px);
+}
+
+@keyframes fire {
+    0% { transform: translateX(-50%) scale(0.8); opacity: 0.8; }
+    100% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+}
+
+/* Enhanced Contact Section with Rice Grain Pattern and Depth */
+.contact-us {
+    background-image: 
+        linear-gradient(45deg,
+            transparent 60%,
+            rgba(255,255,255,0.1) 65%,
+            transparent 70%),
+        linear-gradient(-45deg,
+            transparent 60%,
+            rgba(255,255,255,0.1) 65%,
+            transparent 70%);
+    background-size: 60px 60px;
+    transform-style: preserve-3d;
+}
+
+/* ========== ANIMATION ENHANCEMENTS ========== */
+@keyframes leafFall {
+    0% { transform: translateY(-120%) rotate(0deg) scale(0.7); opacity: 0.7; }
+    100% { transform: translateY(120vh) rotate(360deg) scale(1.3); opacity: 1; }
+}
+
+.leaf-fall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.leaf-fall::before {
+    content: '❀';
+    position: absolute;
+    color: rgba(139, 69, 19, 0.5);
+    animation: leafFall 14s linear infinite;
+    font-size: 1.8rem;
+}
+
+/* ========== RESPONSIVE ENHANCEMENTS ========== */
+@media (max-width: 768px) {
+    .sacred-border::before,
+    .temple-card::before {
+        background-size: 40px;
+    }
+    
+    .river-flow::after {
+        height: 15px;
+    }
+    
+    footer::before {
+        width: 200px;
+        height: 200px;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+/* ========== DIVINE VARIABLES ========== */
+:root {
+    /* Color Scheme */
+    --gold: #ffd700;
+    --amber: #ffcc80;
+    --bronze: #8b4513;
+    --copper: #b87333;
+    --parchment: #f0e6d2;
+    --velvet: #331a00;
+    --obsidian: #1a0f07;
+    --saffron: #FF9933;
+    --vermilion: #E34234;
+    --sacred-green: #138808;
+
+    /* Sacred Patterns */
+    --mandala-pattern: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="%23ffd700" stroke-width="0.5" fill="none"><animate attributeName="r" values="45;40;45" dur="10s" repeatCount="indefinite"/></circle></svg>');
+    --lotus-pattern: radial-gradient(circle at 10% 10%, rgba(255,215,0,0.2) 2%, transparent 30%),
+                    radial-gradient(circle at 90% 90%, rgba(255,215,0,0.2) 2%, transparent 30%);
+}
+
+/* ========== DIVINE BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--parchment);
+    background: linear-gradient(135deg, var(--obsidian), var(--velvet));
+    line-height: 1.8;
+    overflow-x: hidden;
+    transform-style: preserve-3d;
+}
+
+/* ========== CELESTIAL EFFECTS ========== */
+.divine-light {
+    position: fixed;
+    width: 150vw;
+    height: 150vh;
+    background: radial-gradient(circle, 
+        rgba(255,215,0,0.1) 0%, 
+        rgba(255,215,0,0.05) 20%, 
+        transparent 60%);
+    animation: divineGlow 8s infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.astral-layer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 2px),
+        radial-gradient(circle, rgba(255,215,0,0.05) 1px, transparent 2px);
+    background-size: 40px 40px;
+    animation: starTwinkle 5s infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ========== SACRED STRUCTURES ========== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, var(--bronze), var(--copper));
+    padding: 2rem 4rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border-bottom: 4px solid var(--gold);
+    transform-style: preserve-3d;
+    
+    /* Sacred Tree Motif */
+    background-image: 
+        linear-gradient(to right, 
+            transparent 47%, 
+            rgba(139, 69, 19, 0.5) 50%, 
+            transparent 53%),
+        radial-gradient(circle at center,
+            rgba(255,215,0,0.2) 20%,
+            transparent 40%);
+}
+
+.hero {
+    height: 100vh;
+    background-blend-mode: multiply;
+    background: 
+        linear-gradient(rgba(34, 17, 0, 0.7), rgba(34, 17, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1586348943529-beaae6c28db9') center/cover fixed,
+        var(--lotus-pattern);
+    background-size: cover, 350px;
+    animation: lotusBloomBg 35s linear infinite;
+}
+
+/* ========== DIVINE COMPONENTS ========== */
+.temple-card {
+    perspective: 1000px;
+    background: linear-gradient(45deg, var(--velvet), var(--bronze));
+    width: 320px;
+    margin: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.7);
+    transform-style: preserve-3d;
+    
+    /* Leaf Motifs */
+    &::before {
+        content: '';
+        position: absolute;
+        top: -60%;
+        left: -60%;
+        width: 220%;
+        height: 220%;
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8 2 4 6 4 12c0 8 8 10 8 10s8-2 8-10c0-6-4-10-8-10z" fill="%238b4513" fill-opacity="0.2"/></svg>');
+        background-size: 120px;
+        animation: leafFlow 30s linear infinite;
+        opacity: 0.7;
+        transform: translateZ(10px);
+    }
+}
+
+.stat {
+    background-image: 
+        radial-gradient(circle at center, rgba(255,215,0,0.2) 20%, transparent 80%),
+        linear-gradient(45deg, #221100 30%, #8b4513 100%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.7);
+    transform-style: preserve-3d;
+    
+    /* Rangoli Pattern */
+    &::after {
+        content: '';
+        position: absolute;
+        top: -30px;
+        left: -30px;
+        width: calc(100% + 60px);
+        height: calc(100% + 60px);
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="%238b4513" stroke-width="2" fill="none"/></svg>');
+        background-size: 40px;
+        opacity: 0.2;
+        animation: rangoliRotate 35s linear infinite;
+        transform: translateZ(10px);
+    }
+}
+
+/* ========== SACRED MOTIONS ========== */
+@keyframes divineGlow {
+    0% { opacity: 0.3; transform: scale(0.9); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+    100% { opacity: 0.3; transform: scale(0.9); }
+}
+
+@keyframes lotusBloomBg {
+    0% { background-position: 0 0; }
+    100% { background-position: 350px 350px; }
+}
+
+@keyframes leafFlow {
+    0% { transform: rotate(0deg) translate(0,0); }
+    100% { transform: rotate(360deg) translate(140px,140px); }
+}
+
+@keyframes rangoliRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fire {
+    0% { transform: translateX(-50%) scale(0.8); opacity: 0.8; }
+    100% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+}
+
+/* ========== DIVINE INTERACTIONS ========== */
+.nav-links a {
+    position: relative;
+    overflow: hidden;
+    
+    &::after {
+        content: '🕉️';
+        position: absolute;
+        right: -20px;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    &:hover::after {
+        opacity: 0.5;
+        right: 0;
+    }
+}
+
+.temple-card-inner {
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    
+    .temple-card:hover & {
+        transform: rotateY(180deg);
+    }
+}
+
+/* ========== SACRED RESPONSIVENESS ========== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-direction: column;
+        background-image: 
+            linear-gradient(to right, 
+                transparent 47%, 
+                rgba(139, 69, 19, 0.3) 50%, 
+                transparent 53%);
+    }
+
+    .temple-card::before {
+        background-size: 40px;
+    }
+
+    .stat::after {
+        background-size: 20px;
+    }
+}
+
+/* ========== DIVINE UTILITIES ========== */
+.divine-text {
+    font-family: 'Cardo', serif;
+    text-shadow: 
+        0 0 10px var(--gold),
+        0 0 20px rgba(255,215,0,0.3),
+        2px 2px 4px rgba(0,0,0,0.5);
+    
+    &::after {
+        content: attr(data-text);
+        position: absolute;
+        color: transparent;
+        text-shadow: 
+            0 0 20px var(--gold),
+            0 0 40px var(--amber),
+            0 0 60px var(--bronze);
+        animation: textGlow 2s ease-in-out infinite alternate;
+    }
+}
+
+.divine-accent {
+    background: linear-gradient(45deg, var(--saffron), var(--turmeric), var(--vermilion), var(--sacred-green));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.protected-section {
+    position: relative;
+    padding: 2rem;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        border: 3px double var(--gold);
+        border-radius: 20px;
+        filter: drop-shadow(0 0 10px var(--gold));
+        pointer-events: none;
+    }
+}
+
+/* ========== SACRED ANIMATIONS ========== */
+.leaf-fall::before {
+    content: '❀';
+    position: absolute;
+    color: rgba(139, 69, 19, 0.5);
+    animation: leafFall 14s linear infinite;
+}
+
+@keyframes leafFall {
+    0% { transform: translateY(-120%) rotate(0deg) scale(0.7); opacity: 0.7; }
+    100% { transform: translateY(120vh) rotate(360deg) scale(1.3); opacity: 1; }
+}
+
+/* ========== DIVINE ELEMENTS ========== */
+::-webkit-scrollbar {
+    width: 12px;
+    background: var(--obsidian);
+    
+    &-thumb {
+        background: linear-gradient(var(--gold), var(--bronze));
+        border-radius: 10px;
+        border: 3px solid var(--obsidian);
+    }
+}
+
+.divine-input {
+    background: rgba(0,0,0,0.3);
+    border: 2px solid var(--gold);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    
+    &:focus {
+        box-shadow: 0 0 20px var(--gold);
+        background: rgba(255,215,0,0.05);
+    }
+}
+.read-more {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(45deg, var(--bronze), var(--copper));
+    color: var(--parchment);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer; /* Hand cursor on hover */
+    position: relative;
+    overflow: hidden;
+}
+
+.read-more:hover {
+    background: linear-gradient(45deg, var(--copper), var(--bronze));
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transform: translateY(-2px);
+}
+
+.read-more:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Ripple click effect */
+.read-more::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.read-more:hover::after {
+    width: 150px;
+    height: 150px;
+}
+
+/* Divine symbol transition */
+.read-more::before {
+    content: '🕉';
+    position: absolute;
+    right: -20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover::before {
+    opacity: 0.5;
+    right: 10px;
+}

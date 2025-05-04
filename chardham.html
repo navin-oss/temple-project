@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Char Dham Yatra: Divine Sojourn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom, #030712, #111827);
+            color: #f5f5f5;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(45deg, rgba(3, 7, 18, 0.8), rgba(245, 245, 245, 0.1)),
+                        url('chardham_hero.jpg') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: heroZoom 10s ease-in-out infinite alternate, fadeIn 2s ease forwards;
+        }
+
+        @keyframes heroZoom {
+            0% { background-size: 100%; }
+            100% { background-size: 110%; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 60%, rgba(3, 7, 18, 0.8));
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-family: 'Philosopher', serif;
+            font-size: 4.5rem;
+            color: #fff;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            animation: glow 3s ease-in-out infinite alternate, fadeInUp 1s ease forwards;
+            margin-bottom: 1.5rem;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px #FFFFFF; }
+            100% { text-shadow: 0 0 40px #87CEEB; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #eee;
+            animation: fadeIn 2s ease forwards, pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+
+        .section {
+            padding: 6rem 2rem;
+            background: linear-gradient(15deg, #030712 0%, #111827 100%);
+            border-bottom: 2px solid #87CEEB;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Philosopher', serif;
+            font-size: 3rem;
+            color: #87CEEB;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            animation: slideInLeft 1s ease forwards;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .blue-border {
+            height: 4px;
+            width: 100px;
+            background: linear-gradient(90deg, #FFFFFF, #87CEEB);
+            margin: 0 auto 2rem;
+            border-radius: 2px;
+        }
+
+        .chardham-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: gridFadeIn 1s ease forwards;
+        }
+
+        @keyframes gridFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .chardham-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #87CEEB;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chardham-card:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(45deg, rgba(135, 206, 235, 0.1), transparent);
+            box-shadow: 0 5px 15px rgba(135, 206, 235, 0.2);
+            border-color: #fff;
+        }
+
+        .chardham-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .chardham-card:hover::before {
+            opacity: 1;
+        }
+
+        .chardham-card h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .chardham-card:hover h3 {
+            color: #87CEEB;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: galleryFadeIn 1s ease forwards;
+            margin-top: 4rem;
+        }
+
+        @keyframes galleryFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 1;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(135, 206, 235, 0.3);
+        }
+
+        .floating-lamp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: #87CEEB;
+            animation: float 3s ease-in-out infinite, pulse 2s infinite alternate;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+
+
+        .section p {
+            max-width: 800px;
+            margin: 1rem auto;
+            text-align: justify;
+            color: #eee;
+            animation: fadeIn 2s ease forwards;
+        }
+        .audio-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .audio-icon {
+            font-size: 2rem;
+            color: #87CEEB;
+            cursor: pointer;
+            animation: pulse 2s infinite alternate;
+        }
+
+        .audio-controls {
+            display: flex;
+            gap: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #87CEEB;
+        }
+
+        .audio-button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .audio-button:hover {
+            color: #87CEEB;
+        }
+
+        #audio-player {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Char Dham Yatra: Divine Sojourn</h1>
+            <p>Embark on a spiritual journey to the abodes of the divine.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>The Sacred Sanctuaries</h2>
+            <div class="blue-border"></div>
+        </div>
+        <div class="chardham-grid">
+            <div class="chardham-card">
+                <h3>Yamunotri</h3>
+                <p>The origin of the Yamuna River and the seat of Goddess Yamuna.</p>
+            </div>
+            <div class="chardham-card">
+                <h3>Gangotri</h3>
+                <p>The source of the Ganges River and the shrine of Goddess Ganga.</p>
+            </div>
+            <div class="chardham-card">
+                <h3>Kedarnath</h3>
+                <p>One of the twelve Jyotirlingas of Lord Shiva, located in the Himalayas.</p>
+            </div>
+            <div class="chardham-card">
+                <h3>Badrinath</h3>
+                <p>The abode of Lord Vishnu, located between the Nar and Narayan mountain ranges.</p>
+            </div>
+        </div>
+        <p>The Char Dham Yatra is a pilgrimage to four holy sites in Uttarakhand, India. These shrines are dedicated to various deities and are considered highly sacred by Hindus. The yatra is believed to cleanse the soul and bestow spiritual merit.</p>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Visual Pilgrimage</h2>
+            <div class="blue-border"></div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="yamu.jpeg" alt="Yamunotri Temple">
+            </div>
+            <div class="gallery-item">
+                <img src="GGG.jpeg" alt="Gangotri Temple">
+            </div>
+            <div class="gallery-item">
+                <img src="ke.jpg" alt="Kedarnath Temple">
+            </div>
+            <div class="gallery-item">
+                <img src="B.jpg" alt="Badrinath Temple">
+            </div>
+        </div>
+        <p>The Char Dham Yatra is not only a spiritual journey but also a visual spectacle. The temples are nestled amidst breathtaking Himalayan scenery, with rivers, mountains, and lush greenery adding to their divine beauty.</p>
+    </section>
+
+    <div class="floating-lamp">🪔</div>
+    <div class="audio-container">
+        <div class="audio-icon">
+            <i class="fas fa-music"></i>
+        </div>
+        <div class="audio-controls">
+            <button class="audio-button" id="play-pause">▶</button>
+            <button class="audio-button" id="stop">■</button>
+        </div>
+        <audio id="audio-player" src="Shiva Tandava Stotram.mp3"></audio>
+    </div>
+
+    <script>
+        const audioPlayer = document.getElementById('audio-player');
+        const playPauseButton = document.getElementById('play-pause');
+        const stopButton = document.getElementById('stop');
+        const audioIcon = document.querySelector('.audio-icon');
+
+        let isPlaying = false;
+
+        playPauseButton.addEventListener('click', () => {
+            if (isPlaying) {
+                audioPlayer.pause();
+                playPauseButton.textContent = '▶';
+                isPlaying = false;
+                audioIcon.classList.remove('playing');
+            } else {
+                audioPlayer.play();
+                playPauseButton.textContent = '||';
+                isPlaying = true;
+                audioIcon.classList.add('playing');
+            }
+        });
+
+        stopButton.addEventListener('click', () => {
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+            playPauseButton.textContent = '▶';
+            isPlaying = false;
+            audioIcon.classList.remove('playing');
+        });
+
+        audioPlayer.addEventListener('ended', () => {
+            playPauseButton.textContent = '▶';
+            isPlaying = false;
+            audioIcon.classList.remove('playing');
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahakaleshwar Ujjain: The Abode of Lord Shiva</title>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Open Sans', sans-serif; background: linear-gradient(to bottom, #283747, #5D6D7E); color: #f5f5f5; line-height: 1.8; overflow-x: hidden;">
+
+    <div class="hero" style="height: 100vh; background: linear-gradient(45deg, rgba(40, 55, 71, 0.9), rgba(245, 245, 245, 0.3)), url('mahakaleshwar_hero.jpg') center/cover fixed; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; animation: heroZoom 10s ease-in-out infinite alternate;">
+        <div class="hero-content" style="position: relative; z-index: 1; max-width: 800px; padding: 2rem;">
+            <h1 style="font-family: 'Philosopher', serif; font-size: 4.5rem; text-shadow: 0 0 30px rgba(245, 245, 245, 0.5); animation: glow 3s ease-in-out infinite alternate; margin-bottom: 1.5rem;">Mahakaleshwar Ujjain: The Abode of Lord Shiva</h1>
+            <p style="text-shadow: 0 0 10px rgba(245, 245, 245, 0.5);">Experience the divine presence of Lord Mahakal in the heart of Ujjain.</p>
+        </div>
+    </div>
+    
+    <section class="section" style="padding: 6rem 2rem; background: linear-gradient(15deg, #283747 0%, #5D6D7E 100%); border-bottom: 2px solid #D4AC0D; position: relative;">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-family: 'Philosopher', serif; font-size: 3rem; color: #D4AC0D; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">The Eternal Lord</h2>
+            <div class="gold-border" style="height: 4px; width: 100px; background: linear-gradient(90deg, #D4AC0D, #B7950B); margin: 0 auto 2rem; border-radius: 2px;"></div>
+        </div>
+        <div class="timeline" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+            <div class="timeline-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-left: 5px solid #D4AC0D; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
+                <h3 style="color: #D4AC0D;">Jyotirlinga Significance</h3>
+                <p>Mahakaleshwar is one of the twelve Jyotirlingas, considered the most sacred abodes of Lord Shiva. Its 'Bhasma Aarti' is a unique and spiritually charged ritual.</p>
+                <img src="U1.jpg" alt="Mahakaleshwar Jyotirlinga" style="width: 100%; height: auto; margin-top: 1rem; border-radius: 8px;">
+            </div>
+            <div class="timeline-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-left: 5px solid #D4AC0D; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
+                <h3 style="color: #D4AC0D;">Ancient Heritage</h3>
+                <p>Ujjain, home to Mahakaleshwar, is an ancient city with rich historical and cultural significance, mentioned in various Hindu scriptures and Puranas.</p>
+                <img src="U.jpeg" alt="Ujjain City" style="width: 100%; height: auto; margin-top: 1rem; border-radius: 8px;">
+            </div>
+            <div class="timeline-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-left: 5px solid #D4AC0D; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
+                <h3 style="color: #D4AC0D;">Spiritual Energy</h3>
+                <p>The temple radiates a powerful spiritual energy that attracts devotees from all over the world, seeking the blessings of Lord Mahakal for peace and prosperity.</p>
+                <img src="U2.jpg" alt="Ujjain City" style="width: 100%; height: auto; margin-top: 1rem; border-radius: 8px;">
+            </div>
+        </div>
+        <p style="max-width: 800px; margin: 1rem auto; text-align: justify; text-shadow: 0 0 5px rgba(245, 245, 245, 0.5);">Mahakaleshwar Temple is a timeless symbol of devotion, where the divine aura of Lord Shiva permeates every corner, offering solace and spiritual upliftment.</p>
+    </section>
+
+    <style>
+        @keyframes heroZoom {
+            0% { background-size: 100%; }
+            100% { background-size: 110%; }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px #D4AC0D; }
+            100% { text-shadow: 0 0 40px #B7950B; }
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(45deg, rgba(183, 149, 11, 0.1), transparent);
+            box-shadow: 0 5px 15px rgba(183, 149, 11, 0.2);
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(245, 245, 245, 0.1), transparent);
+            transform: rotate(45deg);
+        }
+    </style>
+</body>
+</html>

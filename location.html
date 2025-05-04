@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Famous Temples in India</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(160deg, #FF9933, #ffffff, #138808);
+            min-height: 100vh;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .temple-box {
+            flex: 0 0 300px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            border: 2px solid #000080;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #map {
+            flex: 1;
+            border: 3px solid #DAA520;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .temple-list {
+            overflow-y: auto;
+        }
+
+        .temple-list div {
+            padding: 12px;
+            margin: 8px 0;
+            background: rgba(255,255,255,0.95);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid #000080;
+            font-weight: 500;
+        }
+
+        .temple-list div:hover {
+            transform: translateX(10px);
+            background: #FFD700;
+            box-shadow: 0 4px 15px rgba(139,69,19,0.2);
+        }
+
+        h2 {
+            color: #000080;
+            text-align: center;
+            margin: 0 0 20px 0;
+            font-size: 1.8em;
+        }
+
+        .ashok-chakra {
+            width: 35px;
+            height: 35px;
+            margin: 0 auto 15px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23000080"/><path d="M12 2.5L12 21.5" stroke="white"/><path d="M12 2.5L12 21.5" stroke="white" transform="rotate(15 12 12)"/><path d="M12 2.5L12 21.5" stroke="white" transform="rotate(30 12 12)"/><path d="M12 2.5L12 21.5" stroke="white" transform="rotate(45 12 12)"/></svg>');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="temple-box">
+        <div class="ashok-chakra"></div>
+        <h2>🇮🇳 Sacred Temples 🛕</h2>
+        <div class="temple-list">
+            <div onclick="showTemple(0)">Kedarnath Temple</div>
+            <div onclick="showTemple(1)">Meenakshi Temple</div>
+            <div onclick="showTemple(2)">Somnath Temple</div>
+            <div onclick="showTemple(3)">Kashi Vishwanath</div>
+            <div onclick="showTemple(4)">Jagannath Temple</div>
+            <div onclick="showTemple(5)">Vaishno Devi</div>
+            <div onclick="showTemple(6)">Akshardham Temple</div>
+            <div onclick="showTemple(7)">Mahakaleshwar Temple</div>
+            <div onclick="showTemple(8)">Brihadeeswarar Temple</div>
+            <div onclick="showTemple(9)">Ramanathaswamy Temple</div>
+            <div onclick="showTemple(10)">Girnar Temple</div>
+            <div onclick="showTemple(11)">Ashtavinayak Temples</div>
+            <div onclick="showTemple(12)">Hanuman Mandir (Connaught Place)</div>
+            <div onclick="showTemple(13)">Tulja Bhavani Temple</div>
+            <div onclick="showTemple(14)">Mahalaxmi Temple (Kolhapur)</div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    // Initialize map
+    var map = L.map('map').setView([22.9734, 78.6569], 5);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    // Temple data with descriptions
+    const temples = [
+        { name: "Kedarnath Temple", coords: [30.7352, 79.0669], desc: "Highest Shiva temple among Panch Kedar (3,583 m)" },
+        { name: "Meenakshi Temple", coords: [9.9195, 78.1190], desc: "Iconic temple complex with 14 colorful gopurams" },
+        { name: "Somnath Temple", coords: [20.8880, 70.4012], desc: "First among 12 Jyotirlingas, rebuilt seven times" },
+        { name: "Kashi Vishwanath", coords: [25.3109, 83.0095], desc: "Most sacred Jyotirlinga on Ganges riverbank" },
+        { name: "Jagannath Temple", coords: [19.8047, 85.8164], desc: "Famous for annual Rath Yatra festival" },
+        { name: "Vaishno Devi", coords: [33.0266, 74.9498], desc: "Shakti Peetha in Trikuta Mountains" },
+        { name: "Akshardham Temple", coords: [28.6127, 77.2773], desc: "Largest Hindu temple complex in world" },
+        { name: "Mahakaleshwar Temple", coords: [23.1765, 75.7865], desc: "Jyotirlinga with unique south-facing idol" },
+        { name: "Brihadeeswarar Temple", coords: [10.7828, 79.1319], desc: "UNESCO site with 66m vimana" },
+        { name: "Ramanathaswamy Temple", coords: [9.2885, 79.3177], desc: "Longest temple corridor in world" },
+        { name: "Girnar Temple", coords: [21.5205, 70.4579], desc: "Ancient hill temples of Jain and Hindu worship" },
+        { name: "Ashtavinayak Temples", coords: [18.6928, 73.8753], desc: "Eight sacred temples of Ganesha in Maharashtra" },
+        { name: "Hanuman Mandir (CP)", coords: [28.6329, 77.2195], desc: "Historic 16th-century Hanuman temple in Delhi" },
+        { name: "Tulja Bhavani Temple", coords: [18.0074, 76.0711], desc: "Powerful Shakti Peetha in Tuljapur, Maharashtra" },
+        { name: "Mahalaxmi Temple (Kolhapur)", coords: [16.6956, 74.2215], desc: "Mahalaxmi (Ambabai) Shakti Peeth in Kolhapur" }
+    ];
+
+    // Add markers
+    const markers = temples.map((temple, index) => {
+        return L.marker(temple.coords)
+            .addTo(map)
+            .bindPopup(`<b>${temple.name}</b><br>${temple.desc}`);
+    });
+
+    // Show temple
+    function showTemple(index) {
+        map.flyTo(temples[index].coords, 12);
+        markers[index].openPopup();
+    }
+</script>
+
+</body>
+</html>

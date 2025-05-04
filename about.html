@@ -1,0 +1,102 @@
+<!-- About Us Section -->
+<section class="about-us" id="about">
+    <div class="about-container">
+        <h2 data-text="About Us">About Us</h2>
+        <div class="about-content">
+            <div class="mission-statement">
+                <p class="highlight">Our mission is to provide a comprehensive guide to the incredible temples of India, showcasing their historical significance, architectural beauty, and spiritual essence.</p>
+            </div>
+            <p class="expanded-info">
+                We are a passionate team of designers, developers, and cultural storytellers dedicated to building immersive digital experiences centered around India’s sacred temples. By combining advanced 3D visualizations, augmented reality features, and historically accurate content, we craft engaging temple websites that preserve and promote India's architectural and spiritual heritage. From the cosmic alignments of Khajuraho to the floating wonders of Hampi, our mission is to digitally document and showcase these divine marvels for future generations—making them accessible to the world through the power of modern technology.
+
+
+            </p>
+            <div class="temple-facts">
+                <div class="fact-card">
+                    <h3>📜 Living Archives</h3>
+                    <p>Interactive timelines & ritual documentation</p>
+                </div>
+                <div class="fact-card">
+                    <h3>🌐 Temple Information</h3>
+                    <p>Digitally preserving India’s temples through immersive technology</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.about-us {
+    padding: 100px 20px;
+    background: linear-gradient(45deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    padding: 50px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid #dee2e6;
+}
+
+.highlight {
+    font-size: 1.4rem;
+    color: #2b2d42;
+    line-height: 1.8;
+    padding: 25px;
+    background: linear-gradient(145deg, #fff3b0, #ffe66d);
+    border-radius: 12px;
+    border-left: 4px solid #ffd60a;
+    margin-bottom: 20px;
+}
+
+.expanded-info {
+    font-size: 1.2rem;
+    color: #495057;
+    line-height: 1.9;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+}
+
+h2[data-text] {
+    font-size: 3.5rem;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.temple-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.fact-card {
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+    border: 1px solid #dee2e6;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        padding: 30px;
+    }
+    h2[data-text] {
+        font-size: 2.5rem;
+    }
+    .highlight {
+        font-size: 1.2rem;
+        padding: 20px;
+    }
+}
+</style>

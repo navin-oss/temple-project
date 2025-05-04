@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girnar Datta Mandir: Abode of Divine Ascent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Open Sans', sans-serif; background: linear-gradient(to bottom, #1a237e, #303f9f); color: #ffe0b2; line-height: 1.8; overflow-x: hidden;">
+
+    <div class="hero" style="height: 100vh; background: linear-gradient(45deg, rgba(26, 35, 126, 0.9), rgba(255, 224, 178, 0.3)), url('girnar_datta_hero.jpg') center/cover fixed; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; animation: heroZoom 10s ease-in-out infinite alternate;">
+        <div class="hero-content" style="position: relative; z-index: 1; max-width: 800px; padding: 2rem;">
+            <h1 style="font-family: 'Philosopher', serif; font-size: 4.5rem; text-shadow: 0 0 30px rgba(255, 224, 178, 0.5); animation: glow 3s ease-in-out infinite alternate; margin-bottom: 1.5rem;">Girnar Datta Mandir: Abode of Divine Ascent</h1>
+            <p style="text-shadow: 0 0 10px rgba(255, 224, 178, 0.5);">Where spiritual elevation meets the majestic heights of Girnar.</p>
+        </div>
+    </div>
+    
+    <section class="section" style="padding: 6rem 2rem; background: linear-gradient(15deg, #1a237e 0%, #303f9f 100%); border-bottom: 2px solid #ffc107; position: relative;">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-family: 'Philosopher', serif; font-size: 3rem; color: #ffc107; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">The Sacred Summit</h2>
+            <div class="gold-border" style="height: 4px; width: 100px; background: linear-gradient(90deg, #ffc107, #ffb300); margin: 0 auto 2rem; border-radius: 2px;"></div>
+        </div>
+        <div class="timeline" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+            <div class="timeline-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-left: 5px solid #ffc107; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
+                <h3 style="color: #ffc107;">Spiritual Ascent</h3>
+                <p>The arduous climb to Girnar Datta Mandir symbolizes a spiritual journey, where devotees seek the divine blessings of Lord Dattatreya amidst the serene heights.</p>
+                <img src="G11.jpg" alt="Girnar Climb" style="width: 100%; height: auto; margin-top: 1rem; border-radius: 8px;">
+            </div>
+            <div class="timeline-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-left: 5px solid #ffc107; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
+                <h3 style="color: #ffc107;">Ancient Sanctity</h3>
+                <p>Girnar, a mountain steeped in mythology, holds the sacred footprints of Lord Dattatreya, making it a revered pilgrimage site for devotees seeking spiritual enlightenment.</p>
+                <img src="G12.jpg" alt="Datta Footprints" style="width: 100%; height: auto; margin-top: 1rem; border-radius: 8px;">
+            </div>
+            <div class="timeline-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-left: 5px solid #ffc107; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
+                <h3 style="color: #ffc107;">Divine Presence</h3>
+                <p>Lord Dattatreya, an embodiment of the trinity (Brahma, Vishnu, Shiva), is worshipped for his profound wisdom and blessings, offering solace to those who seek his divine grace.</p>
+                <img src="G13.jpg" alt="Datta Footprints" style="width: 100%; height: auto; margin-top: 1rem; border-radius: 8px;">
+            </div>
+        </div>
+        <p style="max-width: 800px; margin: 1rem auto; text-align: justify; text-shadow: 0 0 5px rgba(255, 224, 178, 0.5);">Girnar Datta Mandir is a beacon of spiritual ascent, where devotees experience a profound connection with the divine amidst the breathtaking landscapes of Girnar.</p>
+    </section>
+
+    <style>
+        @keyframes heroZoom {
+            0% { background-size: 100%; }
+            100% { background-size: 110%; }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px #ffc107; }
+            100% { text-shadow: 0 0 40px #ffb300; }
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(45deg, rgba(255, 179, 0, 0.1), transparent);
+            box-shadow: 0 5px 15px rgba(255, 179, 0, 0.2);
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 224, 178, 0.1), transparent);
+            transform: rotate(45deg);
+        }
+    </style>
+</body>
+</html>

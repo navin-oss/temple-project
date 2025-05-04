@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mystical Temples</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: radial-gradient(circle at top, #1a1a2e 0%, #0f3460 100%);
+      color: #eee;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: url('https://source.unsplash.com/1600x900/?indian-temple,spiritual') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 140px 20px;
+      position: relative;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    header h1,
+    header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      animation: glow 2s infinite alternate;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      color: #ffdd99;
+    }
+
+    nav {
+      background-color: #0f3460;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcb05;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      animation: slideIn 2s ease forwards;
+      transition: transform 0.3s;
+    }
+
+    section:hover {
+      transform: scale(1.01);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #ffcb05;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      color: #ff6f61;
+      font-weight: bold;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #ff6f61;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s;
+    }
+
+    .scroll-top:hover {
+      background: #ff856e;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0f3460;
+      color: white;
+      border-top: 2px solid #ffcb05;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #fff;
+      }
+      to {
+        text-shadow: 0 0 20px #ffcb05, 0 0 30px #ffcb05;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Mystical Temples</h1>
+    <p>Unlocking the secrets of sacred geometry, sound, and energy</p>
+  </header>
+
+  <nav>
+    <a href="#portal">Divine Portal</a>
+    <a href="#energy">Energy</a>
+    <a href="#chants">Chants</a>
+    <a href="#beyond">Beyond</a>
+    <a href="#journey">Personal Journey</a>
+    <a href="#symbols">Cosmic Symbols</a>
+  </nav>
+
+  <section id="portal">
+    <h2>Portal to the Divine</h2>
+    <p>Temples have always stood as <span class="highlight">mystical gateways</span> between the material and spiritual realms. They channel divine frequencies through architectural symmetry, creating a field of resonance that awakens the inner spirit.</p>
+    <p>Their sacred designs echo <span class="highlight">cosmic patterns</span>, and every pillar, dome, and sanctum plays a role in this divine symphony.</p>
+  </section>
+
+  <section id="energy">
+    <h2>Encoded in Energy</h2>
+    <p>Many temples are constructed on <span class="highlight">energy meridians</span> of the Earth. Copper kalashas, granite floors, and intricate carvings are not ornamental — they are energetic tools tuned to balance human chakras and universal forces.</p>
+    <p>The <span class="highlight">garbhagriha</span> or sanctum is the nucleus of this energetic system, where subtle vibrations elevate consciousness and invoke inner stillness.</p>
+  </section>
+
+  <section id="chants">
+    <h2>Chants, Light & Vibration</h2>
+    <p>From the sound of <span class="highlight">Om</span> to the rhythmic beating of drums, temples utilize sound as a form of alchemy. Chanting mantras amplifies intention and synchronizes the mind with divine frequency.</p>
+    <p>Lamps, incense, and rituals are not merely tradition—they are encoded tools to <span class="highlight">transmute energy</span>, cleanse aura, and raise collective vibrations within temple precincts.</p>
+  </section>
+
+  <section id="beyond">
+    <h2>Beyond the Material</h2>
+    <p>Temples act as <span class="highlight">time machines of consciousness</span>. They hold centuries of devotion, emotion, and transformation. Devotees often describe a shift in perception, a sense of transcendence that elevates the soul beyond everyday reality.</p>
+    <p>Some ancient temples are believed to store <span class="highlight">cosmic codes</span> in their inscriptions, passed down by sages who understood multidimensional science and consciousness engineering.</p>
+  </section>
+
+  <section id="journey">
+    <h2>Temple as a Personal Journey</h2>
+    <p>Visiting a temple is symbolic of an <span class="highlight">inner pilgrimage</span>. The journey from the outer gate to the inner sanctum mirrors the travel from external distractions to the inner self. Each step, bell chime, and offering leads the seeker closer to their own divinity.</p>
+    <p>Temples do not ask for belief; they offer <span class="highlight">experience</span>. A transformation. A reconnection with source energy. A place where silence speaks louder than words.</p>
+  </section>
+
+  <section id="symbols">
+    <h2>Symbols and Cosmic Alignment</h2>
+    <p>Many temples are aligned with celestial bodies — the sun, moon, and stars. Equinox shadows falling on deity idols, or sun rays entering temple doors only on specific dates, show profound astronomical mastery.</p>
+    <p>These architectural marvels are blueprints of the cosmos, designed to bring harmony between nature, human, and the divine.</p>
+  </section>
+
+
+
+  <button class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+</body>
+<style>
+    .temple-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+    }
+  
+    .temple {
+      background: #0f3460;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), 0 0 40px rgba(255, 203, 5, 0.2);
+      overflow: hidden;
+      width: 280px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+  
+    .temple:hover {
+      transform: rotateY(5deg) scale(1.05);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2), 0 0 50px rgba(255, 203, 5, 0.5);
+    }
+  
+    .temple img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 3px solid #ffcb05;
+    }
+  
+    .temple h3 {
+      padding: 15px 15px 0;
+      color: #ffcb05;
+      font-size: 1.2rem;
+      font-family: 'Playfair Display', serif;
+    }
+  
+    .temple p {
+      padding: 0 15px 20px;
+      color: #eee;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  </style>
+  
+  <div class="temple-gallery">
+    <div class="temple">
+      <img src="bbbb.jpg" alt="Brihadeeswarar Temple">
+      <h3>Brihadeeswarar Temple</h3>
+      <p>
+        Located in Thanjavur, Tamil Nadu, this UNESCO World Heritage site is a marvel of Chola architecture, built over 1000 years ago.
+      </p>
+    </div>
+    <div class="temple">
+      <img src="kaii.jpg" alt="Kailasa Temple">
+      <h3>Kailasa Temple</h3>
+      <p>
+        Carved from a single rock in Maharashtra, this temple is dedicated to Lord Shiva and is one of the largest monolithic structures in the world.
+      </p>
+    </div>
+    <div class="temple">
+      <img src="suu.jpg" alt="Konark Sun Temple">
+      <h3>Konark Sun Temple</h3>
+      <p>
+        Built in the 13th century in Odisha, this temple is designed as a colossal chariot with intricately carved stone wheels and horses.
+      </p>
+    </div>
+  </div>
+  
+ 
+  
+
+</html>

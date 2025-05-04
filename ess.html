@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essence of Temples</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f8f4ff, #fce4ec);
+      color: #2c2c2c;
+      scroll-behavior: smooth;
+      perspective: 1000px;
+    }
+
+    header {
+      background: url('https://source.unsplash.com/1600x900/?temple,spiritual') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 150px 20px 100px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: floatHeader 8s ease-in-out infinite;
+    }
+
+    @keyframes floatHeader {
+      0%, 100% { transform: translateZ(0); }
+      50% { transform: translateZ(30px); }
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    header h1,
+    header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+      transform: rotateX(10deg);
+      color: white;
+    }
+
+    header p {
+      font-size: 1.7rem;
+      animation: fadeInUp 1.2s ease-out;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 30px;
+      transform: rotateY(2deg);
+      transition: transform 0.6s ease-in-out;
+    }
+
+    section:hover {
+      transform: rotateY(0deg) scale(1.02);
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.7rem;
+      color: #6a1b9a;
+      margin-bottom: 25px;
+      position: relative;
+      text-align: center;
+    }
+
+    section h2::after {
+      content: '';
+      width: 90px;
+      height: 4px;
+      background-color: #ff6f61;
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+    }
+
+    section p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      margin-bottom: 25px;
+      background: linear-gradient(145deg, #ffffff, #f2eafc);
+      padding: 20px 25px;
+      border-left: 6px solid #ab47bc;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+      transform: rotateX(2deg);
+    }
+
+    section p:hover {
+      transform: rotateX(0deg) scale(1.01);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .highlight {
+      color: #e91e63;
+      font-weight: bold;
+      background: linear-gradient(90deg, #f48fb1, #f06292);
+      padding: 0 6px;
+      border-radius: 4px;
+    }
+
+    footer {
+      background: linear-gradient(to right, #6a1b9a, #8e24aa);
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 1rem;
+      border-top: 4px solid #ff6f61;
+      transform-style: preserve-3d;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: linear-gradient(to right, #ec407a, #d81b60);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s, transform 0.3s;
+      z-index: 999;
+    }
+
+    .scroll-top:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      section h2 {
+        font-size: 2rem;
+      }
+
+      section p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 style="color: white;">The Essence of Temples</h1>
+    <p>A journey into the sacred rhythm of heritage, spirit, and science</p>
+  </header>
+
+  <section>
+    <h2>Timeless Sanctuaries</h2>
+    <p>Temples stand as <span class="highlight">eternal beacons</span> of spirituality and architecture. These monumental marvels reflect India’s glorious past, woven with divine purpose and cosmic alignment. They are not just buildings, but <span class="highlight">living mandalas</span> radiating peace and universal order.</p>
+    <p>Each temple is built using <span class="highlight">vastu shastra</span> principles, integrating directional energies and sacred geometry. Their orientation, design, and rituals align the human mind with <span class="highlight">higher consciousness</span>.</p>
+  </section>
+
+  <section>
+    <h2>Energy and Elevation</h2>
+    <p>Temple grounds are <span class="highlight">vortexes of energy</span>, located precisely at earth’s magnetic intersections. Their materials—granite, copper, sandalwood—emit natural frequencies, healing the aura of all who enter.</p>
+    <p>Elements like <span class="highlight">temple bells</span>, incense, chants, and circumambulation aren't symbolic—they are designed to awaken and elevate. A visit to a temple is a <span class="highlight">full-body alignment</span>—of soul, senses, and science.</p>
+  </section>
+
+  <section>
+    <h2>Culture, Unity & Consciousness</h2>
+    <p>More than spiritual centers, temples were cultural capitals. They preserved <span class="highlight">arts, dance, knowledge, and community</span>. They hosted teachings, medicine, and public welfare, making them holistic institutions of ancient India.</p>
+    <p>Symbolically, they represent our <span class="highlight">inward journey</span>. The outer structure = physical world. The inner sanctum = soul. Every ritual = personal transformation. To step into a temple is to step into one’s own divine potential.</p>
+  </section>
+
+ 
+
+  <button class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+</body>
+
+</html>

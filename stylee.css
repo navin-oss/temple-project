@@ -1,0 +1,327 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f7f7f7, #eaeaea);
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* HERO SECTION */
+  /* Full-width banner with parallax background, gradient overlay, and subtle animation */
+  #hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    perspective: 1500px;
+    animation: scaleIn 3s ease-in-out;
+  }
+  
+  #hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+    pointer-events: none;
+  }
+  
+  .hero-content {
+    position: relative;
+    color: #fff;
+    z-index: 2;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.7);
+    animation: fadeInDown 1.5s ease-out;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.3rem;
+  }
+  
+  /* TEMPLE DETAILS SECTION */
+  /* 3D Interactive Cards with enhanced shadow and tilt effects */
+  #temple-details {
+    padding: 80px 20px;
+    background: #fff;
+  }
+  
+  #temple-details h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: #c0392b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .temple-card {
+    width: 320px;
+    height: 420px;
+    perspective: 1200px;
+    transition: transform 0.3s ease;
+  }
+  
+  .temple-card:hover {
+    transform: scale(1.05) rotateZ(1deg);
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-radius: 10px;
+  }
+  
+  .temple-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .card-front {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    border: 2px solid #c0392b;
+  }
+  
+  .card-front img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+  }
+  
+  .card-front:hover img {
+    transform: scale(1.1);
+  }
+  
+  .card-front h3 {
+    margin-top: 15px;
+    font-size: 1.6rem;
+    color: #c0392b;
+    letter-spacing: 1px;
+  }
+  
+  .card-back {
+    background: linear-gradient(145deg, #ecf0f1, #bdc3c7);
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-back h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #8e44ad;
+    letter-spacing: 1px;
+  }
+  
+  .card-back p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.4;
+  }
+  
+  /* GALLERY SECTION */
+  /* Dynamic grid with hover overlays and smooth transitions */
+  #gallery {
+    padding: 80px 20px;
+    background: #f4f4f4;
+  }
+  
+  #gallery h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: #27ae60;
+    text-transform: uppercase;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+  }
+  
+  .gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.5s, box-shadow 0.5s;
+  }
+  
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* INFORMATION / BLOG SECTION */
+  /* Enhanced layout with subtle animations and custom borders */
+  #info {
+    padding: 80px 20px;
+    background: #fff;
+  }
+  
+  #info h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: #2980b9;
+    text-transform: uppercase;
+  }
+  
+  #info article {
+    max-width: 840px;
+    margin: 0 auto 50px;
+    padding: 30px;
+    border-left: 6px solid #2980b9;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  #info article:hover {
+    transform: translateX(10px);
+  }
+  
+  #info article h3 {
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+    color: #2980b9;
+  }
+  
+  #info article p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  #info article a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  #info article a:hover {
+    color: #1f6391;
+  }
+  
+  /* FOOTER SECTION */
+  /* Deep gradient background with animated text shadow */
+  footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ecf0f1;
+    text-align: center;
+    padding: 25px;
+    font-size: 1rem;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
+  }
+  
+  footer p {
+    animation: glow 2s infinite alternate;
+  }
+  
+  /* KEYFRAME ANIMATIONS */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from { transform: scale(1.1); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px rgba(236, 240, 241, 0.7);
+    }
+    to {
+      text-shadow: 0 0 20px rgba(236, 240, 241, 1);
+    }
+  }
+  
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    #hero h1 {
+      font-size: 2.2rem;
+    }
+    
+    .hero-content p {
+      font-size: 1rem;
+    }
+    
+    #temple-details h2,
+    #gallery h2,
+    #info h2 {
+      font-size: 2.2rem;
+    }
+    
+    .temple-card {
+      width: 90%;
+      max-width: 320px;
+    }
+  }
+  
+  

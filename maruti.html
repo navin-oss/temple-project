@@ -1,0 +1,267 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  
+    :root {
+      --primary-color: #3498db;
+      --text-color-primary: #333;
+      --text-color-secondary: #666;
+      --bg-color-primary: #fff;
+      --bg-color-secondary: #f4f7f6;
+      --shadow-light: rgba(0, 0, 0, 0.1);
+      --shadow-medium: rgba(0, 0, 0, 0.15);
+      --border-light: #eee;
+      --transition-duration: 0.3s;
+      --font-size-h1: 3rem;
+      --font-size-h2: 2.4rem;
+      --font-size-h3: 1.8rem;
+      --font-size-p: 1rem;
+    }
+  
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color-secondary);
+      color: var(--text-color-primary);
+      overflow-x: hidden;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  
+    /* Hero Section */
+    .hero {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/6/60/Hanuman_Mandir_Shivaji_Park.jpg') center/cover no-repeat;
+      color: var(--bg-color-primary);
+      text-align: center;
+      padding: 150px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    }
+  
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  
+    .hero h1 {
+      font-size: var(--font-size-h1);
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+  
+    .hero p {
+      font-size: var(--font-size-p);
+      opacity: 0.9;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+  
+    /* Featured Temples Section */
+    .featured-temples {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+  
+    .featured-temples h2 {
+      font-size: var(--font-size-h2);
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  
+    .featured-temple-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+    }
+  
+    .featured-temple-card {
+      background-color: var(--bg-color-primary);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px var(--shadow-medium);
+      transition: transform var(--transition-duration) ease-in-out, box-shadow var(--transition-duration) ease-in-out;
+    }
+  
+    .featured-temple-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px var(--shadow-medium);
+    }
+  
+    .featured-temple-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 2px solid var(--border-light);
+    }
+  
+    .featured-temple-card-content {
+      padding: 25px;
+    }
+  
+    .featured-temple-card h3 {
+      font-size: var(--font-size-h3);
+      color: var(--text-color-primary);
+      margin-bottom: 15px;
+    }
+  
+    .featured-temple-card p {
+      font-size: var(--font-size-p);
+      color: var(--text-color-secondary);
+      line-height: 1.8;
+    }
+  
+    /* Other Temples Section */
+    .other-temples {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: var(--bg-color-primary);
+      border-radius: 15px;
+      box-shadow: 0 5px 20px var(--shadow-light);
+    }
+  
+    .other-temples h2 {
+      font-size: var(--font-size-h2);
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  
+    .other-temple-list {
+      list-style: none;
+      padding: 0;
+    }
+  
+    .other-temple-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+  
+    .other-temple-item:last-child {
+      border-bottom: none;
+    }
+  
+    .other-temple-item h3 {
+      font-size: 1.5rem;
+      color: var(--text-color-primary);
+      margin-bottom: 10px;
+    }
+  
+    .other-temple-item p {
+      font-size: var(--font-size-p);
+      color: var(--text-color-secondary);
+      line-height: 1.8;
+    }
+  
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--text-color-secondary);
+      font-size: 0.9rem;
+    }
+  
+    /* Fade In Animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    .hero, .featured-temples, .other-temples, footer {
+      animation: fadeIn 0.6s ease-out both;
+    }
+  </style>
+  
+  <body>
+    <div class="hero">
+      <div class="hero-content">
+        <h1>११ मारुती मंदिरे - महाराष्ट्र</h1>
+        <p>समर्थ रामदासस्वामींनी स्थापन केलेल्या पवित्र व ऐतिहासिक ११ मारुतींची ओळख</p>
+      </div>
+    </div>
+  
+    <section class="featured-temples">
+      <h2>विशेष मारुती मंदिरे</h2>
+      <div class="featured-temple-grid">
+        <div class="featured-temple-card">
+          <img src="marrr.webp" alt="Shahapur Maruti Temple">
+          <div class="featured-temple-card-content">
+            <h3>शहापूरचा मारुती</h3>
+            <p>कराडजवळ शहापूर गावातील हे मंदिर ११ मारुतींपैकी पहिले मानले जाते. नदीकाठी वसलेले हे देऊळ पूर्वाभिमुख असून मूर्ती उग्र भाव दर्शवते.</p>
+          </div>
+        </div>
+        <div class="featured-temple-card">
+          <img src="maa.jpeg" alt="Parvati Maruti Temple">
+          <div class="featured-temple-card-content">
+            <h3>परवतीचा मारुती</h3>
+            <p>पुण्यातील पर्वती टेकडीवर वसलेले हे मंदिर एक शांत आणि उंचावर असलेले सुंदर स्थळ आहे. दर्शनासोबत निसर्गसौंदर्याची अनुभूती देते.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="other-temples">
+      <h2>इतर मारुती मंदिरे</h2>
+      <ul class="other-temple-list">
+        <li class="other-temple-item">
+          <h3>शिराळ्याचा मारुती</h3>
+          <p>सांगली जिल्ह्यात नागपूजेसाठी प्रसिद्ध असलेल्या शिराळे गावात हे भव्य मंदिर आहे. मूर्ती उत्तरेकडे पाहणारी असून सूर्योदय व सूर्यास्ताच्या वेळी झरोक्यांमधून दिव्य प्रकाश पडतो.</p>
+        </li>
+        <li class="other-temple-item">
+          <h3>छाफळचा मारुती</h3>
+          <p>सातारा जिल्ह्यातील छाफळ येथे रामदासस्वामींनी स्थापित केलेले हे मंदिर भक्तांसाठी अत्यंत पूज्य स्थान आहे.</p>
+        </li>
+        <li class="other-temple-item">
+          <h3>माजगावचा मारुती</h3>
+          <p>कराडजवळील माजगाव येथील हे मंदिर साधना व शांतीसाठी ओळखले जाते. मूर्ती शांत भावधारेत आहे.</p>
+        </li>
+        <li class="other-temple-item">
+          <h3>शिंगणवाडीचा मारुती</h3>
+          <p>पन्हाळा परिसरातील शिंगणवाडी येथे हे ऐतिहासिक मंदिर असून स्थापत्यशैली विशेष आहे. समर्थांच्या वास्तव्याची साक्ष देते.</p>
+        </li>
+        <li class="other-temple-item">
+          <h3>बाहेचा मारुती</h3>
+          <p>सांगली जिल्ह्यातील बाहे गावातील हे मंदिर नवसासाठी प्रसिद्ध आहे. भक्त येथे नवस फेडण्यासाठी गर्दी करतात.</p>
+        </li>
+        <li class="other-temple-item">
+          <h3>छाफळचा दुसरा मारुती</h3>
+          <p>छाफळ गावात दोन मारुती मंदिरे असून हे दुसरे मंदिर रस्त्यालगत आहे व ते भाविकांमध्ये प्रसिद्ध आहे.</p>
+        </li>
+        <li class="other-temple-item">
+          <h3>मनपाडळ्याचा मारुती</h3>
+          <p>कोल्हापूर जिल्ह्यात वाठारपासून १४ कि.मी. अंतरावर मनपाडळे गावात उत्तराभिमुखी साधी, सुबक मूर्ती आहे. कुबडीसह ही ५ फूट उंच मूर्ती कौलारू मंदिरात आहे.</p>
+        </li>
+        <li class="other-temple-item">
+          <h3>पाडळीचा मारुती</h3>
+          <p>वारणे खोऱ्यातील पाडळी गावातील हे मंदिर मनपाडळे जवळ आहे. मूर्ती शांत आणि भक्तिपूर्ण वातावरणात वसलेली आहे.</p>
+        </li>
+        <li class="other-temple-item">
+          <h3>पारगावचा मारुती</h3>
+          <p>या मूर्तीला बाळमारुती म्हणतात. सपाट दगडावर कोरलेली दीड फुटी मूर्ती डावीकडे धावताना दाखवलेली आहे. ही ११व्या क्रमांकाची मूर्ती आहे.</p>
+        </li>
+      </ul>
+    </section>
+  
+    <footer>
+      
+    </footer>
+  </body>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dagdusheth Ganpati: The Divine Icon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Open Sans', sans-serif; background: linear-gradient(to bottom, #8a2900, #d97800); color: #fff8e1; line-height: 1.8; overflow-x: hidden;">
+
+    <div class="hero" style="height: 100vh; background: linear-gradient(45deg, rgba(138, 41, 0, 0.9), rgba(217, 120, 0, 0.3)), url('dagdusheth_hero.jpg') center/cover fixed; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; animation: heroZoom 10s ease-in-out infinite alternate;">
+        <div class="hero-content" style="position: relative; z-index: 1; max-width: 800px; padding: 2rem;">
+            <h1 style="font-family: 'Philosopher', serif; font-size: 4.5rem; text-shadow: 0 0 30px rgba(255, 223, 186, 0.7); animation: glow 3s ease-in-out infinite alternate; margin-bottom: 1.5rem;">Dagdusheth Ganpati: The Divine Icon</h1>
+            <p style="text-shadow: 0 0 10px rgba(255, 223, 186, 0.5);">A beacon of faith, devotion, and grandeur in Pune.</p>
+        </div>
+    </div>
+    
+    <section class="section" style="padding: 6rem 2rem; background: linear-gradient(15deg, #8a2900 0%, #d97800 100%); border-bottom: 2px solid #ffd700; position: relative;">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-family: 'Philosopher', serif; font-size: 3rem; color: #ffd700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">A Timeless Legacy</h2>
+            <div class="gold-border" style="height: 4px; width: 100px; background: linear-gradient(90deg, #ffd700, #ff9800); margin: 0 auto 2rem; border-radius: 2px;"></div>
+        </div>
+        <div class="timeline" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+            <div class="timeline-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-left: 5px solid #ffd700; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
+                <h3 style="color: #ffd700;">A Rich Heritage</h3>
+                <p>The temple, established in the late 19th century by Dagdusheth Halwai and his wife Lakshmibai, remains one of the most revered shrines in Maharashtra.</p>
+                <img src="D1.jpg" alt="Dagdusheth Idol" style="width: 100%; height: auto; margin-top: 1rem; border-radius: 8px;">
+            </div>
+            <div class="timeline-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-left: 5px solid #ffd700; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
+                <h3 style="color: #ffd700;">Ganeshotsav Grand Celebrations</h3>
+                <p>The temple's annual Ganeshotsav attracts millions of devotees, witnessing grand aartis, bhajans, and cultural festivities.</p>
+                <img src="D2.jpg" alt="Ganesh Festival" style="width: 100%; height: auto; margin-top: 1rem; border-radius: 8px;">
+            </div>
+            <div class="timeline-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-left: 5px solid #ffd700; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;">
+                <h3 style="color: #ffd700;">A Pillar of Service</h3>
+                <p>The temple trust actively engages in social welfare, supporting education, healthcare, and community initiatives.</p>
+                <img src="D3.jpeg" alt="Ganesh Festival" style="width: 100%; height: auto; margin-top: 1rem; border-radius: 8px;">
+            </div>
+
+        </div>
+        <p style="max-width: 800px; margin: 1rem auto; text-align: justify; text-shadow: 0 0 5px rgba(255, 223, 186, 0.5);">Dagdusheth Ganpati is not just a temple; it is a spiritual and cultural icon of Maharashtra.</p>
+    </section>
+
+    <style>
+        @keyframes heroZoom {
+            0% { background-size: 100%; }
+            100% { background-size: 110%; }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px #ffd700; }
+            100% { text-shadow: 0 0 40px #ff9800; }
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(45deg, rgba(255, 152, 0, 0.1), transparent);
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.2);
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 223, 186, 0.1), transparent);
+            transform: rotate(45deg);
+        }
+    </style>
+</body>
+</html>

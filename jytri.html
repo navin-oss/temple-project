@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 Jyotirlingas: Divine Abodes of Shiva</title>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom, #0a0e23, #1a103d);
+            color: #E6E6FA;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(45deg, rgba(10, 14, 35, 0.9), rgba(128, 0, 128, 0.3)),
+                url('jyotirlinga_hero.jpg') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: heroZoom 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            0% { background-size: 100%; }
+            100% { background-size: 110%; }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 60%, rgba(10, 14, 35, 0.9));
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-family: 'Philosopher', serif;
+            font-size: 4.5rem;
+            color: #9370DB;
+            text-shadow: 0 0 30px rgba(75, 0, 130, 0.7);
+            animation: glow 3s ease-in-out infinite alternate;
+            margin-bottom: 1.5rem;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px #9370DB; }
+            100% { text-shadow: 0 0 40px #4B0082; }
+        }
+
+        .section {
+            padding: 6rem 2rem;
+            background: linear-gradient(15deg, #0a0e23 0%, #1a103d 100%);
+            border-bottom: 2px solid #4B0082;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Philosopher', serif;
+            font-size: 3rem;
+            color: #9370DB;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .purple-border {
+            height: 4px;
+            width: 100px;
+            background: linear-gradient(90deg, #9370DB, #4B0082);
+            margin: 0 auto 2rem;
+            border-radius: 2px;
+        }
+
+        .jyotirlinga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .jyotirlinga-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #4B0082;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .jyotirlinga-card:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(45deg, rgba(75, 0, 130, 0.1), transparent);
+            box-shadow: 0 5px 15px rgba(75, 0, 130, 0.3);
+        }
+
+        .jyotirlinga-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(147, 112, 219, 0.1), transparent);
+            transform: rotate(45deg);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 1;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(75, 0, 130, 0.4);
+        }
+
+        .significance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .significance-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(147, 112, 219, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .significance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 3px 10px rgba(75, 0, 130, 0.2);
+        }
+
+        .significance-icon {
+            font-size: 2.5rem;
+            color: #9370DB;
+            margin-bottom: 1rem;
+        }
+
+        .floating-trishul {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: #9370DB;
+            animation: float 3s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .section p {
+            max-width: 800px;
+            margin: 1rem auto;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body onload="playAudio()">
+    <div class="hero">
+        <div class="hero-content">
+            <h1>12 Jyotirlingas: Pillars of Divine Light</h1>
+            <p>Where Shiva manifests as columns of effulgent light, blessing devotees with eternal grace.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Sacred Abodes</h2>
+            <div class="purple-border"></div>
+        </div>
+        <div class="jyotirlinga-grid">
+            <div class="jyotirlinga-card">
+                <h3>Somnath (Gujarat)</h3>
+                <p>The first among the twelve, where the Moon God worshipped Shiva to regain his lustre. Destroyed and rebuilt several times, it stands as a symbol of resilience.</p>
+            </div>
+            <div class="jyotirlinga-card">
+                <h3>Mallikarjuna (Andhra Pradesh)</h3>
+                <p>Located on Srisailam mountain, this is where Shiva and Parvati are worshipped together, representing the union of masculine and feminine energies.</p>
+            </div>
+            <div class="jyotirlinga-card">
+                <h3>Mahakaleshwar (Madhya Pradesh)</h3>
+                <p>The only south-facing Jyotirlinga, known for its unique Bhasma Aarti where sacred ashes are used to worship the deity.</p>
+            </div>
+            <div class="jyotirlinga-card">
+                <h3>Omkareshwar (Madhya Pradesh)</h3>
+                <p>Located on an island shaped like the sacred 'Om' symbol, this lingam represents the primal sound of the universe.</p>
+            </div>
+            <div class="jyotirlinga-card">
+                <h3>Kedarnath (Uttarakhand)</h3>
+                <p>Perched in the Himalayas at 3,583 meters, this remote temple is part of the Char Dham pilgrimage and remains covered in snow for six months.</p>
+            </div>
+            <div class="jyotirlinga-card">
+                <h3>Bhimashankar (Maharashtra)</h3>
+                <p>Nestled in the Sahyadri hills, this temple is associated with the legend of Shiva destroying the demon Tripurasura.</p>
+            </div>
+        </div>
+        <p>The twelve Jyotirlingas are sacred shrines where Shiva is worshipped in his form as a pillar of light. Each has unique legends, architectural styles, and spiritual significance, forming a network of powerful energy centers across India.</p>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Spiritual Significance</h2>
+            <div class="purple-border"></div>
+        </div>
+        <div class="significance-grid">
+            <div class="significance-card">
+                <div class="significance-icon">🕉️</div>
+                <h3>Cosmic Energy</h3>
+                <p>Each Jyotirlinga represents a point where cosmic energy is believed to be most concentrated, creating powerful spiritual vortices.</p>
+            </div>
+            <div class="significance-card">
+                <div class="significance-icon">🌍</div>
+                <h3>Geographic Balance</h3>
+                <p>The twelve shrines are strategically located across the subcontinent, creating a spiritual grid that maintains cosmic balance.</p>
+            </div>
+            <div class="significance-card">
+                <div class="significance-icon">🔥</div>
+                <h3>Self-Manifested</h3>
+                <p>Unlike man-made lingams, Jyotirlingas are believed to have self-manifested, making them especially powerful objects of worship.</p>
+            </div>
+            <div class="significance-card">
+                <div class="significance-icon">🕯️</div>
+                <h3>Liberation</h3>
+                <p>Devotees believe that visiting all twelve in one's lifetime can help achieve moksha (liberation from the cycle of rebirth).</p>
+            </div>
+        </div>
+        <p>The Jyotirlingas represent different aspects of Shiva's cosmic form and are considered especially potent for spiritual transformation. Each shrine has unique rituals, festivals, and forms of worship that have been preserved for millennia.</p>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Divine Visuals</h2>
+            <div class="purple-border"></div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="ss.jpg" alt="Somnath Temple">
+            </div>
+            <div class="gallery-item">
+                <img src="KK.jpg" alt="Kedarnath in Snow">
+            </div>
+            <div class="gallery-item">
+                <img src="MM.jpg" alt="Mahakaleshwar Bhasma Aarti">
+            </div>
+            <div class="gallery-item">
+                <img src="O.jpg" alt="Omkareshwar by Narmada">
+            </div>
+        </div>
+        <p>The Jyotirlingas showcase India's diverse sacred geography - from the shores of Gujarat to the Himalayan peaks, from dense forests to river islands. Each temple's architecture reflects its regional traditions while maintaining the cosmic symbolism of the Jyotirlinga.</p>
+    </section>
+
+    <div class="floating-trishul">🔱</div>
+
+    <audio id="audio-player" src="shiv.mp3" autoplay loop style="display: none;"></audio>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audio-player");
+            audio.play();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashtavinayak Ganpati: Divine Manifestations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+            color: #333;
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative; /* For absolute positioning of hibiscus */
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allows clicks to go through */
+            z-index: -1;
+            background-image: url("hibiscus.png"); /* Replace with your hibiscus image */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3; /* Adjust opacity as needed */
+            animation: hibiscusRain 20s linear infinite; /* Start animation */
+        }
+        @keyframes hibiscusRain {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(45deg, rgba(255,236,210,0.9), rgba(252,182,159,0.3)),
+                        url('ganpati_hero.jpg') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: heroZoom 10s ease-in-out infinite alternate;
+        }
+        @keyframes heroZoom {
+            0% { background-size: 100%; }
+            100% { background-size: 110%; }
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 60%, rgba(255,236,210,0.9));
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero h1 {
+            font-family: 'Philosopher', serif;
+            font-size: 4.5rem;
+            color: #d35400;
+            text-shadow: 0 0 30px rgba(211,84,0,0.7);
+            animation: glow 3s ease-in-out infinite alternate;
+            margin-bottom: 1.5rem;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px #d35400; }
+            100% { text-shadow: 0 0 40px #e67e22; }
+        }
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+            background: linear-gradient(15deg, #ffecd2 0%, #fcb69f 100%);
+            border-bottom: 2px solid #e67e22;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-header h2 {
+            font-family: 'Philosopher', serif;
+            font-size: 3rem;
+            color: #d35400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .orange-border {
+            height: 4px;
+            width: 100px;
+            background: linear-gradient(90deg, #d35400, #e67e22);
+            margin: 0 auto 2rem;
+            border-radius: 2px;
+        }
+        .section p {
+            max-width: 800px;
+            margin: 1rem auto;
+            text-align: justify;
+        }
+        /* Temple Grid Styles */
+        .temple-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Increased min width */
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .temple-card {
+            background-color: rgba(255, 255, 255, 0.8); /* Added transparency */
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e67e22;
+        }
+
+        .temple-card:hover {
+            transform: translateY(-10px) scale(1.03); /* Added scale on hover */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .temple-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            color: #d35400;
+            margin-bottom: 1.2rem;
+        }
+
+        .temple-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .temple-card img:hover {
+             transform: scale(1.1);
+        }
+
+        .temple-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .temple-card .location {
+            font-style: italic;
+            color: #888;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        /* Floating Ganpati Icon */
+        .floating-ganpati {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: #d35400;
+            animation: float 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            z-index: 10;
+        }
+        .floating-ganpati:hover{
+           transform: scale(1.2);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body onload="playAudio()">
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Ashtavinayak Ganpati</h1>
+            <p>Discover the divine grace of Lord Ganesha at the eight sacred Ashtavinayak temples.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>About Ashtavinayak</h2>
+            <div class="orange-border"></div>
+        </div>
+        <p>
+            Ashtavinayak refers to the eight ancient temples dedicated to Lord Ganesha in Maharashtra.
+            Each temple is steeped in history and mythology, offering devotees a unique glimpse
+            into the divine manifestations of Ganpati. Pilgrims visit these temples to seek blessings,
+            wisdom, and success, making the journey a spiritual and cultural celebration.
+        </p>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>The Eight Sacred Temples</h2>
+            <div class="orange-border"></div>
+        </div>
+        <div class="temple-grid">
+            <div class="temple-card">
+                <img src="mor.jpeg" alt="Moreshwar Temple, Morgaon">
+                <h3>Moreshwar Temple</h3>
+                <p><strong>Location:</strong> Morgaon, Pune</p>
+                <p><strong>Significance:</strong> The most important of the AshtaVinayak temples, representing the beginning of the pilgrimage.</p>
+            </div>
+            <div class="temple-card">
+                <img src="SSS.jpg" alt="Siddhivinayak Temple, Siddhatek">
+                <h3>Siddhivinayak Temple</h3>
+                <p><strong>Location:</strong> Siddhatek, Ahmednagar</p>
+                <p><strong>Significance:</strong> Known for its powerful deity, believed to fulfill wishes.  The only Ashtavinayak with the trunk on the right.</p>
+            </div>
+            <div class="temple-card">
+                <img src="BB.jpg" alt="Ballaleshwar Temple, Pali">
+                <h3>Ballaleshwar Temple</h3>
+                <p><strong>Location:</strong> Pali, Raigad</p>
+                <p><strong>Significance:</strong> The only Ganesha named after a devotee, representing devotion.</p>
+            </div>
+            <div class="temple-card">
+                <img src="VVV.jpg" alt="Varadavinayak Temple, Mahad">
+                <h3>Varadavinayak Temple</h3>
+                <p><strong>Location:</strong> Mahad, Raigad</p>
+                <p><strong>Significance:</strong> Known for granting boons to devotees.</p>
+            </div>
+            <div class="temple-card">
+                <img src="CC.jpg" alt="Chintamani Temple, Theur">
+                <h3>Chintamani Temple</h3>
+                <p><strong>Location:</strong> Theur, Pune</p>
+                <p><strong>Significance:</strong> Believed to dispel worries and grant peace of mind.</p>
+            </div>
+            <div class="temple-card">
+                <img src="gg.jpeg" alt="Girijatmaj Temple, Lenyadri">
+                <h3>Girijatmaj Temple</h3>
+                <p><strong>Location:</strong> Lenyadri, Pune</p>
+                <p><strong>Significance:</strong> Located in a cave complex, representing Ganesha as a child of Parvati.</p>
+            </div>
+            <div class="temple-card">
+                <img src="VV.jpg" alt="Vigneshwar Temple, Ozar">
+                <h3>Vigneshwar Temple</h3>
+                <p><strong>Location:</strong> Ozar, Pune</p>
+                <p><strong>Significance:</strong> Believed to remove obstacles and grant success.</p>
+            </div>
+            <div class="temple-card">
+                <img src="Mmm.webp" alt="Mahavinayak Temple, Ranjangaon">
+                <h3>Mahavinayak Temple</h3>
+                <p><strong>Location:</strong> Ranjangaon, Pune</p>
+                <p><strong>Significance:</strong> A powerful and majestic form of Ganesha.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="floating-ganpati" onclick="playAudio()">🕉️</div>
+
+    <audio id="audio-player" src="ganpati_chant.mp3" style="display: none;"></audio>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audio-player");
+            audio.play().catch(error => {
+                console.log("Audio playback was blocked. Please click the icon to play.", error);
+            });
+        }
+    </script>
+</body>
+</html>
+
+

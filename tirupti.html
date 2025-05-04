@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Venkateswara: Celestial Abode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom, #000814, #001220);
+            color: #FFD700;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(45deg, rgba(0, 8, 20, 0.9), rgba(255, 165, 0, 0.3)),
+                        url('tirupati_hero.jpg') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: heroZoom 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            0% { background-size: 100%; }
+            100% { background-size: 110%; }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 60%, rgba(0, 8, 20, 0.9));
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Philosopher', serif;
+            font-size: 4.5rem;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            animation: glow 3s ease-in-out infinite alternate;
+            margin-bottom: 1.5rem;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px #FFD700; }
+            100% { text-shadow: 0 0 40px #FF4500; }
+        }
+
+        .section {
+            padding: 6rem 2rem;
+            background: linear-gradient(15deg, #000814 0%, #001220 100%);
+            border-bottom: 2px solid #FF4500;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Philosopher', serif;
+            font-size: 3rem;
+            color: #FF9933;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .gold-border {
+            height: 4px;
+            width: 100px;
+            background: linear-gradient(90deg, #FFD700, #FF4500);
+            margin: 0 auto 2rem;
+            border-radius: 2px;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #FF4500;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(45deg, rgba(255, 69, 0, 0.1), transparent);
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.2);
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transform: rotate(45deg);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 1;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 69, 0, 0.3);
+        }
+
+        .rituals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .ritual-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .ritual-card:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 3px 10px rgba(255, 69, 0, 0.1);
+        }
+
+        .ritual-icon {
+            font-size: 2.5rem;
+            color: #FF9933;
+            margin-bottom: 1rem;
+        }
+
+        .floating-lamp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: #FF9933;
+            animation: float 3s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .section p {
+            max-width: 800px;
+            margin: 1rem auto;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Sri Venkateswara: Celestial Abode</h1>
+            <p>Where antiquity and devotion converge in the heart of Tirumala.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Chronicles of Sanctity</h2>
+            <div class="gold-border"></div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-card">
+                <h3>Ancient Echoes</h3>
+                <p>The temple's origins trace back to the pre-Mauryan era, with mentions in ancient Tamil Sangam literature. It's believed to be a self-manifested (Swayambhu) deity.</p>
+            </div>
+            <div class="timeline-card">
+                <h3>Royal Patronage</h3>
+                <p>From the Pallavas to the Vijayanagara rulers, the temple received royal patronage, leading to its architectural and cultural enrichment. Krishnadevaraya's contributions are particularly noteworthy.</p>
+            </div>
+            <div class="timeline-card">
+                <h3>Enduring Legacy</h3>
+                <p>The temple has stood the test of time, witnessing centuries of devotion and transformation. It continues to be a beacon of faith, drawing millions annually.</p>
+            </div>
+        </div>
+        <p>The Tirumala temple stands as a testament to the enduring power of faith. Its history, intertwined with legends and royal patronage, reflects a journey through time, preserving ancient traditions and spiritual practices.</p>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Sacred Observances</h2>
+            <div class="gold-border"></div>
+        </div>
+        <div class="rituals-grid">
+            <div class="ritual-card">
+                <div class="ritual-icon">🔔</div>
+                <h3>Thomala Seva</h3>
+                <p>An early morning ritual where the deity is adorned with garlands and ornaments, symbolizing the beginning of a new day of devotion.</p>
+            </div>
+            <div class="ritual-card">
+                <div class="ritual-icon">🕯️</div>
+                <h3>Kalyanotsavam</h3>
+                <p>A ceremonial marriage ritual performed daily, reenacting the divine union of Lord Venkateswara and Goddess Padmavathi.</p>
+            </div>
+            <div class="ritual-card">
+                <div class="ritual-icon">🎶</div>
+                <h3>Arjitha Brahmotsavam</h3>
+                <p>A shorter version of the annual Brahmotsavam, performed daily, featuring processions and Vedic chants.</p>
+            </div>
+            <div class="ritual-card">
+                <div class="ritual-icon">🍲</div>
+                <h3>Anna Prasadam</h3>
+                <p>A daily offering of free meals to thousands of devotees, symbolizing the temple's commitment to service and compassion.</p>
+            </div>
+        </div>
+        <p>The daily rituals at the Tirumala temple are a symphony of devotion, each meticulously performed to honor the deity and provide spiritual solace to the devotees. These observances reflect the temple's rich cultural heritage and its unwavering commitment to tradition.</p>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Visual Splendors</h2>
+            <div class="gold-border"></div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="B1.jpg" alt="Golden Gopuram">
+            </div>
+            <div class="gallery-item">
+                <img src="B2.jpg" alt="Sacred Sanctum">
+            </div>
+            <div class="gallery-item">
+                <img src="B3.jpg" alt="Brahmotsavam Festival">
+            </div>
+            <div class="gallery-item">
+                <img src="B4.jpg" alt="Sacred Prasadam">
+            </div>
+            <div class="gallery-item">
+                <img src="B5.jpeg" alt="Scenic View">
+            </div>
+            <div class="gallery-item">
+                <img src="B66.jpg" alt="Procession">
+            </div>
+        </div>
+        <p>The Tirumala temple is a visual masterpiece, adorned with intricate carvings, golden gopurams, and vibrant decorations. Its architectural splendor, combined with the scenic beauty of the surrounding hills, creates an ambiance of divine majesty.</p>
+    </section>
+
+    <div class="floating-lamp">🪔</div>
+
+    <audio controls style="display: none;">
+        <source src="venkateswara_dhvani.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html>
